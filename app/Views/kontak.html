@@ -1,0 +1,539 @@
+<!doctype html>
+<html class="light" lang="id" style="">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>Kontak - SMP Negeri 2 Sidoharjo</title>
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+            rel="stylesheet"
+        />
+        <script id="tailwind-config">
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        colors: {
+                            "surface-dim": "#cbdbf5",
+                            "on-surface": "#0b1c30",
+                            "on-primary-fixed": "#001453",
+                            error: "#ba1a1a",
+                            "on-primary-container": "#a8b8ff",
+                            "tertiary-fixed": "#ffddb8",
+                            "surface-bright": "#f8f9ff",
+                            "on-background": "#0b1c30",
+                            "on-tertiary": "#ffffff",
+                            "on-error": "#ffffff",
+                            tertiary: "#4c2e00",
+                            outline: "#757684",
+                            "tertiary-container": "#6b4200",
+                            "on-secondary": "#ffffff",
+                            "surface-container": "#e5eeff",
+                            "primary-fixed-dim": "#b8c4ff",
+                            "primary-container": "#1e40af",
+                            "on-tertiary-fixed": "#2a1700",
+                            "surface-container-low": "#eff4ff",
+                            "on-secondary-fixed": "#001e2f",
+                            "on-primary": "#ffffff",
+                            "surface-container-high": "#dce9ff",
+                            secondary: "#006591",
+                            "primary-fixed": "#dde1ff",
+                            "inverse-on-surface": "#eaf1ff",
+                            "on-tertiary-container": "#ffa929",
+                            "inverse-surface": "#213145",
+                            "surface-variant": "#d3e4fe",
+                            "surface-tint": "#3755c3",
+                            "secondary-fixed": "#c9e6ff",
+                            "surface-container-highest": "#d3e4fe",
+                            "on-secondary-fixed-variant": "#004c6e",
+                            surface: "#f8f9ff",
+                            primary: "#00288e",
+                            "on-error-container": "#93000a",
+                            "secondary-fixed-dim": "#89ceff",
+                            "on-surface-variant": "#444653",
+                            "secondary-container": "#39b8fd",
+                            "inverse-primary": "#b8c4ff",
+                            "tertiary-fixed-dim": "#ffb95f",
+                            "on-primary-fixed-variant": "#173bab",
+                            background: "#f8f9ff",
+                            "on-tertiary-fixed-variant": "#653e00",
+                            "error-container": "#ffdad6",
+                            "on-secondary-container": "#004666",
+                            "outline-variant": "#c4c5d5",
+                            "surface-container-lowest": "#ffffff",
+                        },
+                        borderRadius: {
+                            DEFAULT: "0.125rem",
+                            lg: "0.25rem",
+                            xl: "0.5rem",
+                            full: "0.75rem",
+                        },
+                        spacing: {
+                            gutter: "24px",
+                            xs: "8px",
+                            base: "4px",
+                            xl: "80px",
+                            "margin-mobile": "16px",
+                            "max-width": "1280px",
+                            lg: "48px",
+                            sm: "16px",
+                            md: "24px",
+                            "margin-desktop": "auto",
+                        },
+                        fontFamily: {
+                            "body-lg": ["Inter"],
+                            "label-md": ["Inter"],
+                            "headline-md": ["Montserrat"],
+                            "display-lg": ["Montserrat"],
+                            "body-md": ["Inter"],
+                            "headline-lg-mobile": ["Montserrat"],
+                            caption: ["Inter"],
+                            "headline-lg": ["Montserrat"],
+                        },
+                        fontSize: {
+                            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                            "label-md": [
+                                "14px",
+                                { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600" },
+                            ],
+                            "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+                            "display-lg": [
+                                "48px",
+                                { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" },
+                            ],
+                            "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                            "headline-lg-mobile": [
+                                "24px",
+                                { lineHeight: "32px", fontWeight: "700" },
+                            ],
+                            caption: ["12px", { lineHeight: "16px", fontWeight: "400" }],
+                            "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "700" }],
+                        },
+                    },
+                },
+            };
+        </script>
+        <style>
+            .glass-card {
+                background: rgba(255, 255, 255, 0.8);
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+            }
+            .material-symbols-outlined {
+                font-variation-settings:
+                    "FILL" 0,
+                    "wght" 400,
+                    "GRAD" 0,
+                    "opsz" 24;
+            }
+        </style>
+    </head>
+    <body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+        <!-- TopNavBar -->
+        <nav
+            class="bg-surface-container-lowest dark:bg-inverse-surface border-b border-outline-variant dark:border-outline sticky top-0 z-50"
+        >
+            <div class="flex justify-between items-center max-w-[1280px] mx-auto px-gutter h-20">
+                <div class="flex items-center gap-xs">
+                    <span
+                        class="material-symbols-outlined text-primary text-headline-md"
+                        style="font-variation-settings: &quot;FILL&quot; 1"
+                        >school</span
+                    >
+                    <h1
+                        class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed"
+                    >
+                        SMP Negeri 2 Sidoharjo
+                    </h1>
+                </div>
+                <div class="hidden md:flex items-center gap-md">
+                    <a
+                        class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors cursor-pointer duration-200"
+                        href="#"
+                        >Home</a
+                    >
+                    <a
+                        class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors cursor-pointer duration-200"
+                        href="#"
+                        >Profil</a
+                    >
+                    <a
+                        class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors cursor-pointer duration-200"
+                        href="#"
+                        >Berita</a
+                    >
+                    <a
+                        class="font-label-md text-label-md text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed font-bold pb-1 cursor-pointer duration-200"
+                        href="#"
+                        >Kontak</a
+                    >
+                </div>
+                <button class="md:hidden text-primary">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </nav>
+        <main>
+            <!-- Hero Section -->
+            <section class="relative h-[400px] flex items-center justify-center overflow-hidden">
+                <div class="absolute inset-0 z-0">
+                    <img
+                        class="w-full h-full object-cover brightness-50"
+                        data-alt="A serene and tranquil wide-angle shot of a modern school campus at sunrise. The soft morning light casts long shadows across neatly manicured green lawns and clean architectural lines of academic buildings. The sky is a gradient of soft blue and pale orange, creating an atmosphere of institutional stability, peace, and academic excellence. The overall visual style is corporate, clean, and highly professional with a focus on prestige."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6VtL0DS5KttTTYYpn3MrWgHXIsGPQn2Zl7z1drpsV6FsqfbdVF-oldzfgiLIZLqPPHixcjOPN2Ehjdhj7ry6PILwtTn2BQ__NFF_aaJE87ehraRjKKKSJ3YKGJETpEEGq-hGnQ9a2ns9VqbpzrAf80KPhK-qAb6A-B2SbLHPgSHRJKNDAjND4IVQKTMc4KH_GplXigNZsh0GywTiIpio31mEVPiwy17yQ7cSf5An_w-dyEvFkq8Sccn2b9C-_OYe3v1vpq8pamA"
+                    />
+                </div>
+                <div class="relative z-10 text-center px-margin-mobile">
+                    <h1 class="font-display-lg text-display-lg text-white mb-base md:mb-sm">
+                        Hubungi Kami
+                    </h1>
+                    <p class="font-body-lg text-body-lg text-surface-variant max-w-2xl mx-auto">
+                        Kami siap mendengarkan aspirasi, pertanyaan, dan kerjasama demi kemajuan
+                        pendidikan di SMP Negeri 2 Sidoharjo.
+                    </p>
+                </div>
+            </section>
+            <!-- Main Content -->
+            <section class="py-xl px-gutter max-w-max-width mx-margin-desktop">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-lg">
+                    <!-- Contact Info Sidebar -->
+                    <div class="lg:col-span-5 space-y-md">
+                        <div
+                            class="bg-surface-container-low p-md rounded-xl border border-outline-variant"
+                        >
+                            <h2 class="font-headline-lg text-headline-lg text-primary mb-md">
+                                Informasi Kontak
+                            </h2>
+                            <div class="space-y-sm">
+                                <div class="flex items-start gap-sm">
+                                    <span
+                                        class="material-symbols-outlined text-primary p-xs bg-surface-container-high rounded-lg"
+                                        >location_on</span
+                                    >
+                                    <div>
+                                        <p class="font-label-md text-label-md text-primary">
+                                            Alamat
+                                        </p>
+                                        <p class="font-body-md text-on-surface">
+                                            Jl. Raya Sidoharjo No. 123, Sidoharjo, Wonogiri
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-sm">
+                                    <span
+                                        class="material-symbols-outlined text-primary p-xs bg-surface-container-high rounded-lg"
+                                        >chat</span
+                                    >
+                                    <div class="">
+                                        <p class="font-label-md text-label-md text-primary">
+                                            WhatsApp
+                                        </p>
+                                        <p class="font-body-md text-on-surface">
+                                            +62 812-3456-7890
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-sm">
+                                    <span
+                                        class="material-symbols-outlined text-primary p-xs bg-surface-container-high rounded-lg"
+                                        >mail</span
+                                    >
+                                    <div>
+                                        <p class="font-label-md text-label-md text-primary">
+                                            Email
+                                        </p>
+                                        <p class="font-body-md text-on-surface">
+                                            info@smpn2sidoharjo.sch.id
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-sm">
+                                    <span
+                                        class="material-symbols-outlined text-primary p-xs bg-surface-container-high rounded-lg"
+                                        >schedule</span
+                                    >
+                                    <div>
+                                        <p class="font-label-md text-label-md text-primary">
+                                            Jam Operasional
+                                        </p>
+                                        <p class="font-body-md text-on-surface">
+                                            Senin - Sabtu, 07:00 - 15:00
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Institutional Trust Card -->
+                        <div
+                            class="bg-primary-container text-on-primary-container p-md rounded-xl shadow-lg relative overflow-hidden"
+                        >
+                            <div class="relative z-10">
+                                <h3 class="font-headline-md text-headline-md mb-xs">
+                                    Amanah &amp; Terpercaya
+                                </h3>
+                                <p class="font-body-md opacity-90">
+                                    Kualitas pelayanan informasi publik adalah prioritas utama kami
+                                    untuk transparansi pendidikan.
+                                </p>
+                            </div>
+                            <div class="absolute -right-8 -bottom-8 opacity-10">
+                                <span class="material-symbols-outlined text-[120px]">school</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Contact Form -->
+                    <div class="lg:col-span-7">
+                        <div
+                            class="bg-surface-container-lowest p-md md:p-lg rounded-xl border border-outline-variant shadow-sm"
+                        >
+                            <h2 class="font-headline-lg text-headline-lg text-on-surface mb-md">
+                                Kirim Pesan
+                            </h2>
+                            <form class="grid grid-cols-1 md:grid-cols-2 gap-sm" id="contactForm">
+                                <div class="space-y-base">
+                                    <label
+                                        class="font-label-md text-label-md text-on-surface-variant"
+                                        for="nama"
+                                        >Nama Lengkap</label
+                                    >
+                                    <input
+                                        class="w-full p-sm rounded-lg border border-outline-variant bg-surface focus:ring-2 focus:ring-primary focus:outline-none transition-all"
+                                        id="nama"
+                                        placeholder="Masukkan nama anda"
+                                        type="text"
+                                    />
+                                </div>
+                                <div class="space-y-base">
+                                    <label
+                                        class="font-label-md text-label-md text-on-surface-variant"
+                                        for="email"
+                                        >Email</label
+                                    >
+                                    <input
+                                        class="w-full p-sm rounded-lg border border-outline-variant bg-surface focus:ring-2 focus:ring-primary focus:outline-none transition-all"
+                                        id="email"
+                                        placeholder="email@contoh.com"
+                                        type="email"
+                                    />
+                                </div>
+                                <div class="md:col-span-2 space-y-base">
+                                    <label
+                                        class="font-label-md text-label-md text-on-surface-variant"
+                                        for="subjek"
+                                        >Subjek</label
+                                    >
+                                    <input
+                                        class="w-full p-sm rounded-lg border border-outline-variant bg-surface focus:ring-2 focus:ring-primary focus:outline-none transition-all"
+                                        id="subjek"
+                                        placeholder="Perihal pesan"
+                                        type="text"
+                                    />
+                                </div>
+                                <div class="md:col-span-2 space-y-base">
+                                    <label
+                                        class="font-label-md text-label-md text-on-surface-variant"
+                                        for="pesan"
+                                        >Pesan</label
+                                    >
+                                    <textarea
+                                        class="w-full p-sm rounded-lg border border-outline-variant bg-surface focus:ring-2 focus:ring-primary focus:outline-none transition-all resize-none"
+                                        id="pesan"
+                                        placeholder="Tuliskan pesan anda di sini..."
+                                        rows="5"
+                                    ></textarea>
+                                </div>
+                                <div class="md:col-span-2 flex justify-end pt-sm">
+                                    <button
+                                        class="bg-primary text-on-primary px-lg py-sm rounded-full font-label-md hover:bg-primary-container hover:shadow-lg active:scale-95 transition-all flex items-center gap-xs"
+                                        type="submit"
+                                    >
+                                        <span class="">Kirim Pesan</span>
+                                        <span class="material-symbols-outlined text-[20px]"
+                                            >send</span
+                                        >
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Google Maps Section -->
+            <section class="w-full h-[500px] bg-surface-container relative">
+                <div class="absolute inset-0 bg-surface-dim overflow-hidden">
+                    <!-- Data Location Map Placeholder -->
+                    <div
+                        class="w-full h-full flex items-center justify-center grayscale opacity-80"
+                        data-location="Sidoharjo, Wonogiri"
+                    >
+                        <img
+                            class="w-full h-full object-cover"
+                            data-alt="A detailed, clean, and professional top-down cartography view or map visualization of an urban area in Indonesia. The map features clear street lines, labeled educational institutions, and green spaces. The visual style is minimalist and informative, using a color palette of soft greys, blues, and whites. It conveys a sense of precise location and easy navigation for a school context."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAq8qd7tNm-nbkF-d7B1LqE_m_88f8gH4GuZkpl8f0mXqwZHh52liiAXmWJqPccUthT6SDf0UYR7yQzzjIUrjHsOjeg-d-SLYhnuxOQT1uNHaUIWz69Gu4sYJQCuzyxnsoUE2jZCTHzYiwBwuiQFoRIATO2pcW9rVx1DJcLvFAfyhC7H881sATUnERglhFIHoN0YG9a5UWmUKY0usRFAY6ziNcrwtrS5BA8SHFoIzxEML27juqokBeB4k3gAspnve5vcXbbF-z8mg"
+                        />
+                        <div class="absolute flex flex-col items-center">
+                            <div
+                                class="bg-primary text-white p-sm rounded-xl shadow-xl animate-bounce"
+                            >
+                                <span class="material-symbols-outlined text-[32px]">school</span>
+                            </div>
+                            <div
+                                class="bg-white px-md py-xs rounded-full shadow-lg mt-xs border border-outline-variant"
+                            >
+                                <span class="font-label-md text-primary"
+                                    >SMP Negeri 2 Sidoharjo</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Interactive Floating Address Card -->
+                <div
+                    class="absolute bottom-gutter right-gutter hidden md:block w-72 glass-card p-md rounded-xl border border-white/50 shadow-2xl"
+                >
+                    <h4 class="font-headline-md text-primary mb-xs">Lokasi Sekolah</h4>
+                    <p class="font-body-md text-on-surface-variant">
+                        Kunjungi kami langsung untuk informasi pendaftaran dan administrasi.
+                    </p>
+                    <button
+                        class="mt-sm w-full py-xs border border-primary text-primary rounded-lg font-label-md hover:bg-primary hover:text-white transition-all"
+                    >
+                        Petunjuk Arah
+                    </button>
+                </div>
+            </section>
+        </main>
+        <!-- Footer -->
+        <footer
+            class="bg-on-background dark:bg-surface-container-lowest text-on-primary dark:text-on-surface"
+        >
+            <div
+                class="w-full py-lg px-gutter flex flex-col md:flex-row justify-between items-start gap-md max-w-[1280px] mx-auto"
+            >
+                <div class="flex-1">
+                    <div class="flex items-center gap-xs mb-sm">
+                        <span class="material-symbols-outlined text-headline-md">school</span>
+                        <h2
+                            class="font-headline-md text-headline-md font-bold text-on-primary dark:text-primary"
+                        >
+                            SMP Negeri 2 Sidoharjo
+                        </h2>
+                    </div>
+                    <p
+                        class="font-body-md text-body-md text-outline-variant dark:text-on-surface-variant max-w-sm"
+                    >
+                        Berdedikasi untuk menciptakan lingkungan belajar yang inspiratif dan
+                        berintegritas bagi tunas bangsa.
+                    </p>
+                </div>
+                <div class="flex flex-col gap-xs font-body-md text-body-md">
+                    <span
+                        class="font-label-md text-on-primary dark:text-primary uppercase tracking-wider mb-base"
+                        >Kontak Cepat</span
+                    >
+                    <p class="text-outline-variant dark:text-on-surface-variant">
+                        Alamat: Jl. Raya Sidoharjo No. 123
+                    </p>
+                    <p class="text-outline-variant dark:text-on-surface-variant">
+                        Telp: (0271) 123456
+                    </p>
+                    <p class="text-outline-variant dark:text-on-surface-variant">
+                        Email: info@smpn2sidoharjo.sch.id
+                    </p>
+                </div>
+                <div class="flex flex-col gap-xs font-body-md text-body-md">
+                    <span
+                        class="font-label-md text-on-primary dark:text-primary uppercase tracking-wider mb-base"
+                        >Navigasi</span
+                    >
+                    <a
+                        class="text-outline-variant dark:text-on-surface-variant hover:text-primary-fixed dark:hover:text-primary transition-colors duration-200"
+                        href="#"
+                        >Profil Sekolah</a
+                    >
+                    <a
+                        class="text-outline-variant dark:text-on-surface-variant hover:text-primary-fixed dark:hover:text-primary transition-colors duration-200"
+                        href="#"
+                        >Informasi PPDB</a
+                    >
+                    <a
+                        class="text-outline-variant dark:text-on-surface-variant hover:text-primary-fixed dark:hover:text-primary transition-colors duration-200"
+                        href="#"
+                        >Galeri Kegiatan</a
+                    >
+                </div>
+            </div>
+            <div
+                class="max-w-[1280px] mx-auto px-gutter py-md border-t border-white/10 dark:border-black/10 flex flex-col md:flex-row justify-between items-center gap-sm"
+            >
+                <p
+                    class="font-body-md text-body-md text-outline-variant dark:text-on-surface-variant opacity-70"
+                >
+                    © 2024 SMP Negeri 2 Sidoharjo. All rights reserved.
+                </p>
+                <div class="flex gap-md">
+                    <a
+                        class="text-on-primary dark:text-on-surface hover:text-primary-fixed transition-colors"
+                        href="#"
+                        ><span class="material-symbols-outlined">face_nod</span></a
+                    >
+                    <a
+                        class="text-on-primary dark:text-on-surface hover:text-primary-fixed transition-colors"
+                        href="#"
+                        ><span class="material-symbols-outlined">photo_camera</span></a
+                    >
+                    <a
+                        class="text-on-primary dark:text-on-surface hover:text-primary-fixed transition-colors"
+                        href="#"
+                        ><span class="material-symbols-outlined">play_circle</span></a
+                    >
+                </div>
+            </div>
+        </footer>
+        <script>
+            // Simple form interaction
+            document.getElementById("contactForm").addEventListener("submit", function (e) {
+                e.preventDefault();
+                const btn = this.querySelector('button[type="submit"]');
+                const originalContent = btn.innerHTML;
+
+                btn.innerHTML = "<span>Mengirim...</span>";
+                btn.disabled = true;
+
+                // Artificial delay to simulate submission
+                setTimeout(() => {
+                    btn.innerHTML =
+                        '<span class="material-symbols-outlined">check_circle</span> <span>Berhasil Terkirim</span>';
+                    btn.classList.remove("bg-primary");
+                    btn.classList.add("bg-green-600");
+
+                    setTimeout(() => {
+                        btn.innerHTML = originalContent;
+                        btn.classList.add("bg-primary");
+                        btn.classList.remove("bg-green-600");
+                        btn.disabled = false;
+                        document.getElementById("contactForm").reset();
+                    }, 3000);
+                }, 1500);
+            });
+
+            // Background scroll effect
+            window.addEventListener("scroll", () => {
+                const scrolled = window.pageYOffset;
+                const heroImage = document.querySelector("section img");
+                if (heroImage) {
+                    heroImage.style.transform = `translateY(${scrolled * 0.4}px)`;
+                }
+            });
+        </script>
+    </body>
+</html>

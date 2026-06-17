@@ -1,0 +1,454 @@
+<!doctype html>
+<html class="light" lang="id" style="">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>Profil Sekolah - Admin SMP Negeri 2 Sidoharjo</title>
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+            rel="stylesheet"
+        />
+        <script id="tailwind-config">
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        colors: {
+                            secondary: "#006591",
+                            "on-secondary": "#ffffff",
+                            "on-primary-fixed": "#001453",
+                            "inverse-on-surface": "#eaf1ff",
+                            "on-secondary-container": "#004666",
+                            primary: "#00288e",
+                            "on-secondary-fixed": "#001e2f",
+                            "primary-container": "#1e40af",
+                            surface: "#f8f9ff",
+                            "on-secondary-fixed-variant": "#004c6e",
+                            "outline-variant": "#c4c5d5",
+                            "error-container": "#ffdad6",
+                            "secondary-fixed": "#c9e6ff",
+                            "secondary-fixed-dim": "#89ceff",
+                            "on-tertiary-container": "#ffa929",
+                            "surface-container-low": "#eff4ff",
+                            "on-background": "#0b1c30",
+                            "surface-dim": "#cbdbf5",
+                            "tertiary-container": "#6b4200",
+                            error: "#ba1a1a",
+                            "surface-variant": "#d3e4fe",
+                            "on-tertiary-fixed": "#2a1700",
+                            "surface-container-high": "#dce9ff",
+                            "surface-bright": "#f8f9ff",
+                            "on-primary-fixed-variant": "#173bab",
+                            "inverse-surface": "#213145",
+                            "on-surface": "#0b1c30",
+                            background: "#f8f9ff",
+                            tertiary: "#4c2e00",
+                            "surface-container-highest": "#d3e4fe",
+                            "on-tertiary-fixed-variant": "#653e00",
+                            "primary-fixed": "#dde1ff",
+                            "secondary-container": "#39b8fd",
+                            "tertiary-fixed-dim": "#ffb95f",
+                            "surface-container": "#e5eeff",
+                            "primary-fixed-dim": "#b8c4ff",
+                            "on-error": "#ffffff",
+                            "surface-tint": "#3755c3",
+                            "on-primary": "#ffffff",
+                            "on-error-container": "#93000a",
+                            "inverse-primary": "#b8c4ff",
+                            "tertiary-fixed": "#ffddb8",
+                            "on-tertiary": "#ffffff",
+                            "surface-container-lowest": "#ffffff",
+                            outline: "#757684",
+                            "on-surface-variant": "#444653",
+                            "on-primary-container": "#a8b8ff",
+                        },
+                        borderRadius: {
+                            DEFAULT: "0.125rem",
+                            lg: "0.25rem",
+                            xl: "0.5rem",
+                            full: "0.75rem",
+                        },
+                        spacing: {
+                            xs: "8px",
+                            base: "4px",
+                            xl: "80px",
+                            lg: "48px",
+                            md: "24px",
+                            sm: "16px",
+                            "max-width": "1280px",
+                        },
+                        fontFamily: {
+                            "headline-lg": ["Montserrat"],
+                            "headline-md": ["Montserrat"],
+                            "body-md": ["Inter"],
+                            "body-lg": ["Inter"],
+                            "label-md": ["Inter"],
+                            caption: ["Inter"],
+                        },
+                    },
+                },
+            };
+        </script>
+        <style>
+            .material-symbols-outlined {
+                font-variation-settings:
+                    "FILL" 0,
+                    "wght" 400,
+                    "GRAD" 0,
+                    "opsz" 24;
+            }
+            .rich-text-editor {
+                min-height: 200px;
+                border: 1px solid #cbd5e1;
+                transition: border-color 0.2s ease;
+            }
+            .rich-text-editor:focus-within {
+                border-color: #1e40af;
+                outline: 2px solid rgba(30, 64, 175, 0.1);
+            }
+            aside::-webkit-scrollbar {
+                width: 4px;
+            }
+            aside::-webkit-scrollbar-thumb {
+                background: rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+            }
+        </style>
+    </head>
+    <body class="bg-background font-body-md text-on-surface">
+        <!-- SideNavBar -->
+        <aside
+            class="bg-primary h-screen w-64 fixed left-0 top-0 shadow-md flex flex-col p-sm z-50"
+        >
+            <div class="flex items-center gap-3 mb-lg px-2">
+                <div
+                    class="w-10 h-10 rounded-full bg-white flex items-center justify-center overflow-hidden"
+                >
+                    <img
+                        alt="Logo SMPN 2 Sidoharjo"
+                        class="w-full h-full object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQGJn7wbjupihvznpnfrRPcuw_m1RijBZqgIGl_LqS4JzAyPEPs8v2bNqlJ7yb3JwFkTjpt9g5A5XAx7GL-K-Ly69L0Gk7HPMptMgKGwIRBrV9G3LE8T0Te2V-TMNNMP5tJtAVxearcPcj9dJXtQDnN2owdQ5XWDxhxCQR5D8sBARf9smsiBuHeNv8QsDbjjBS3yjnlkDL1TKP5xJhOJPMOg4oJP9njbVdMW8TkogOJclMBLCzcPLuIoSReYwN5483IcLKOr-Rmw"
+                    />
+                </div>
+                <div class="">
+                    <h1 class="text-headline-md font-headline-md text-on-primary leading-none">
+                        SMPN 2 Sidoharjo
+                    </h1>
+                    <p
+                        class="text-caption text-on-primary opacity-70 uppercase tracking-widest mt-1"
+                    >
+                        Admin Panel
+                    </p>
+                </div>
+            </div>
+            <nav class="flex-grow space-y-2">
+                <a
+                    class="flex items-center gap-3 px-4 py-3 text-on-primary opacity-80 hover:bg-primary-container hover:opacity-100 transition-colors cursor-pointer active:scale-95"
+                    href="#"
+                >
+                    <span class="material-symbols-outlined">dashboard</span>
+                    <span class="font-label-md text-label-md">Dashboard</span>
+                </a>
+                <a
+                    class="flex items-center gap-3 px-4 py-3 text-on-primary opacity-80 hover:bg-primary-container hover:opacity-100 transition-colors cursor-pointer active:scale-95"
+                    href="#"
+                >
+                    <span class="material-symbols-outlined">newspaper</span>
+                    <span class="font-label-md text-label-md">Berita</span>
+                </a>
+
+                <a
+                    class="flex items-center gap-3 px-4 py-3 bg-secondary-container text-on-secondary-container rounded-lg cursor-pointer transition-all active:scale-95"
+                    href="#"
+                >
+                    <span
+                        class="material-symbols-outlined"
+                        style="font-variation-settings: &quot;FILL&quot; 1"
+                        >school</span
+                    >
+                    <span class="font-label-md text-label-md">Profil Sekolah</span>
+                </a>
+
+                <a
+                    class="flex items-center gap-3 px-4 py-3 text-on-primary opacity-80 hover:bg-primary-container hover:opacity-100 transition-colors cursor-pointer active:scale-95"
+                    href="#"
+                    ><span class="material-symbols-outlined">mail</span
+                    ><span class="font-label-md text-label-md">Pesan Masuk</span></a
+                >
+            </nav>
+            <div class="mt-auto border-t border-white/10 pt-sm">
+                <div class="flex items-center gap-3 px-2">
+                    <img
+                        alt="Admin Avatar"
+                        class="w-8 h-8 rounded-full border-2 border-primary-container"
+                        data-alt="A portrait of a professional Indonesian male administrative officer in his late 40s wearing a clean, crisp white batik shirt. The setting is a bright, modern office with soft-focus books and academic plaques in the background. The lighting is natural and flattering, emphasizing a trustworthy and experienced persona. The color palette is composed of soft blues and warm skin tones, reflecting a corporate yet welcoming school environment."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuC84LYq0hhnnmywumBNboe9Dou-FZmIvEEU4RJsic27evxw66ba08q6WdfqpoBM2OxKbu2y2aTOrHocTKGDqnbvm3tl8vQ9P9nIdMXxEtsKIxoKEwVCd7o-72TqffTGTFFhdDYnu3jtSb5bj5M6LB6Q78wwSuwQzTdezor-FgooHykVYIju5zTe6EHpDYKLIT7PxV_XLI5sopEGyavK-IChOUe0IOaRB5RZH8HUDA1mPN3XUq1aq3DYe6mo8HJay1LGoqgspz233g"
+                    />
+                    <div class="overflow-hidden">
+                        <p class="font-label-md text-on-primary truncate">Admin Utama</p>
+                        <p class="text-caption text-on-primary opacity-60">Superadmin</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!-- TopNavBar -->
+        <header
+            class="h-16 fixed top-0 right-0 left-64 bg-surface flex justify-between items-center px-md border-b border-outline-variant z-40"
+        >
+            <div class="flex items-center gap-4 flex-grow max-w-2xl">
+                <div class="relative w-full">
+                    <span
+                        class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant opacity-60"
+                        >search</span
+                    >
+                    <input
+                        class="w-full bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 text-body-md focus:ring-1 focus:ring-primary"
+                        placeholder="Cari informasi profil..."
+                        type="text"
+                    />
+                </div>
+            </div>
+            <div class="flex items-center gap-6">
+                <div class="relative group">
+                    <span
+                        class="material-symbols-outlined text-primary cursor-pointer hover:text-secondary transition-colors"
+                        >notifications</span
+                    >
+                    <span class="absolute -top-1 -right-1 w-2 h-2 bg-error rounded-full"></span>
+                </div>
+                <span
+                    class="material-symbols-outlined text-primary cursor-pointer hover:text-secondary transition-colors"
+                    >help</span
+                >
+                <div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+                    <img
+                        alt="User Avatar"
+                        class="w-full h-full object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuC84LYq0hhnnmywumBNboe9Dou-FZmIvEEU4RJsic27evxw66ba08q6WdfqpoBM2OxKbu2y2aTOrHocTKGDqnbvm3tl8vQ9P9nIdMXxEtsKIxoKEwVCd7o-72TqffTGTFFhdDYnu3jtSb5bj5M6LB6Q78wwSuwQzTdezor-FgooHykVYIju5zTe6EHpDYKLIT7PxV_XLI5sopEGyavK-IChOUe0IOaRB5RZH8HUDA1mPN3XUq1aq3DYe6mo8HJay1LGoqgspz233g"
+                    />
+                </div>
+            </div>
+        </header>
+        <!-- Main Content Canvas -->
+        <main class="ml-64 pt-16 min-h-screen p-md">
+            <div class="max-w-5xl mx-auto space-y-md">
+                <!-- Breadcrumbs -->
+                <nav class="flex text-caption text-on-surface-variant gap-2 items-center">
+                    <a class="hover:text-primary" href="#">Admin</a>
+                    <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+                    <span class="text-on-surface font-medium">Profil Sekolah</span>
+                </nav>
+                <!-- Header Section -->
+                <div
+                    class="bg-white rounded-xl border border-outline-variant p-md shadow-sm overflow-hidden relative"
+                >
+                    <div
+                        class="absolute top-0 right-0 w-64 h-full opacity-5 pointer-events-none"
+                    ></div>
+                    <div class="relative z-10">
+                        <h3 class="font-headline-md text-headline-md text-primary mb-base">
+                            Informasi Identitas Sekolah
+                        </h3>
+                        <p class="text-body-md text-on-surface-variant max-w-2xl">
+                            Perbarui narasi sejarah, visi, dan misi SMP Negeri 2 Sidoharjo untuk
+                            ditampilkan pada website publik. Pastikan teks mencerminkan standar
+                            akademik yang tinggi.
+                        </p>
+                    </div>
+                </div>
+                <!-- Editor Form -->
+                <form class="space-y-md">
+                    <!-- Sejarah Sekolah Section -->
+                    <div
+                        class="bg-white rounded-xl border border-outline-variant overflow-hidden shadow-sm"
+                    >
+                        <div
+                            class="bg-surface-container-low px-md py-sm border-b border-outline-variant flex items-center gap-2"
+                        >
+                            <span class="material-symbols-outlined text-primary">history_edu</span>
+                            <h4
+                                class="font-label-md text-label-md text-primary uppercase tracking-wider"
+                            >
+                                Sejarah Sekolah
+                            </h4>
+                        </div>
+                        <div class="p-md">
+                            <div
+                                class="rich-text-editor rounded-lg p-sm bg-surface-bright flex flex-col"
+                            >
+                                <div
+                                    class="flex gap-2 mb-sm pb-sm border-b border-outline-variant text-on-surface-variant"
+                                >
+                                    <button
+                                        class="p-1 hover:bg-surface-variant rounded transition-colors"
+                                        type="button"
+                                    >
+                                        <span class="material-symbols-outlined text-md"
+                                            >format_bold</span
+                                        >
+                                    </button>
+                                    <button
+                                        class="p-1 hover:bg-surface-variant rounded transition-colors"
+                                        type="button"
+                                    >
+                                        <span class="material-symbols-outlined text-md"
+                                            >format_italic</span
+                                        >
+                                    </button>
+                                    <button
+                                        class="p-1 hover:bg-surface-variant rounded transition-colors"
+                                        type="button"
+                                    >
+                                        <span class="material-symbols-outlined text-md"
+                                            >format_list_bulleted</span
+                                        >
+                                    </button>
+                                    <button
+                                        class="p-1 hover:bg-surface-variant rounded transition-colors"
+                                        type="button"
+                                    >
+                                        <span class="material-symbols-outlined text-md">link</span>
+                                    </button>
+                                </div>
+                                <textarea
+                                    class="w-full flex-grow bg-transparent border-none focus:ring-0 text-body-md leading-relaxed min-h-[160px]"
+                                    placeholder="Tuliskan sejarah berdirinya SMP Negeri 2 Sidoharjo di sini..."
+                                >
+SMP Negeri 2 Sidoharjo didirikan pada tahun 1984 dengan komitmen untuk memberikan layanan pendidikan menengah berkualitas di wilayah Sidoharjo. Seiring berjalannya waktu, sekolah ini telah berkembang pesat baik dari segi infrastruktur maupun prestasi akademik...</textarea
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Bento Grid for Visi & Misi -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+                        <!-- Visi Section -->
+                        <div
+                            class="bg-white rounded-xl border border-outline-variant overflow-hidden shadow-sm"
+                        >
+                            <div
+                                class="bg-surface-container-low px-md py-sm border-b border-outline-variant flex items-center gap-2"
+                            >
+                                <span class="material-symbols-outlined text-primary"
+                                    >visibility</span
+                                >
+                                <h4
+                                    class="font-label-md text-label-md text-primary uppercase tracking-wider"
+                                >
+                                    Visi Sekolah
+                                </h4>
+                            </div>
+                            <div class="p-md">
+                                <textarea
+                                    class="w-full bg-surface-bright border border-outline-variant rounded-lg p-sm focus:border-primary focus:ring-1 focus:ring-primary text-body-md min-h-[120px]"
+                                    placeholder="Masukkan visi sekolah..."
+                                >
+Terwujudnya sekolah yang Unggul dalam Prestasi, Berkarakter Bangsa, dan Berwawasan Lingkungan berdasarkan Iman dan Taqwa.</textarea
+                                >
+                            </div>
+                        </div>
+                        <!-- Misi Section -->
+                        <div
+                            class="bg-white rounded-xl border border-outline-variant overflow-hidden shadow-sm"
+                        >
+                            <div
+                                class="bg-surface-container-low px-md py-sm border-b border-outline-variant flex items-center gap-2"
+                            >
+                                <span class="material-symbols-outlined text-primary">flag</span>
+                                <h4
+                                    class="font-label-md text-label-md text-primary uppercase tracking-wider"
+                                >
+                                    Misi Sekolah
+                                </h4>
+                            </div>
+                            <div class="p-md">
+                                <textarea
+                                    class="w-full bg-surface-bright border border-outline-variant rounded-lg p-sm focus:border-primary focus:ring-1 focus:ring-primary text-body-md min-h-[120px]"
+                                    placeholder="Masukkan misi sekolah..."
+                                >
+1. Melaksanakan pembelajaran dan bimbingan secara efektif.
+2. Menumbuhkan semangat keunggulan secara intensif kepada seluruh warga sekolah.
+3. Mendorong dan membantu setiap siswa untuk mengenali potensi dirinya.</textarea
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Alert Information -->
+                    <div
+                        class="bg-[#fffbeb] border-l-4 border-[#f59e0b] p-sm rounded shadow-sm flex items-start gap-3"
+                    >
+                        <span class="material-symbols-outlined text-[#f59e0b]">info</span>
+                        <p class="text-label-md text-on-surface-variant">
+                            Perubahan yang Anda simpan akan langsung dipublikasikan ke halaman utama
+                            website sekolah. Harap periksa kembali penulisan dan tata bahasa sebelum
+                            menekan tombol simpan.
+                        </p>
+                    </div>
+                    <!-- Action Button -->
+                    <div class="flex justify-end gap-3 pt-sm">
+                        <button
+                            class="px-6 py-2 border border-primary text-primary font-label-md rounded-lg hover:bg-primary/5 transition-all"
+                            type="button"
+                        >
+                            Batalkan
+                        </button>
+                        <button
+                            class="px-8 py-2 bg-primary text-white font-label-md rounded-lg hover:bg-primary-container shadow-md transition-all active:scale-95 flex items-center gap-2"
+                            type="submit"
+                        >
+                            <span class="material-symbols-outlined text-sm">save</span>
+                            Simpan Perubahan
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </main>
+        <!-- Micro-interaction Scripts -->
+        <script>
+            document.querySelector("form").addEventListener("submit", function (e) {
+                e.preventDefault();
+                const btn = e.target.querySelector('button[type="submit"]');
+                const originalContent = btn.innerHTML;
+
+                btn.innerHTML =
+                    '<span class="material-symbols-outlined animate-spin text-sm">sync</span> Menyimpan...';
+                btn.disabled = true;
+
+                setTimeout(() => {
+                    btn.innerHTML =
+                        '<span class="material-symbols-outlined text-sm">check</span> Tersimpan!';
+                    btn.classList.replace("bg-primary", "bg-green-600");
+
+                    setTimeout(() => {
+                        btn.innerHTML = originalContent;
+                        btn.classList.replace("bg-green-600", "bg-primary");
+                        btn.disabled = false;
+                    }, 2000);
+                }, 1200);
+            });
+
+            // Hover effects for side nav
+            const navLinks = document.querySelectorAll("aside nav a");
+            navLinks.forEach((link) => {
+                link.addEventListener("mouseenter", () => {
+                    if (!link.classList.contains("bg-secondary-container")) {
+                        link.style.paddingLeft = "1.25rem";
+                    }
+                });
+                link.addEventListener("mouseleave", () => {
+                    if (!link.classList.contains("bg-secondary-container")) {
+                        link.style.paddingLeft = "1rem";
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
