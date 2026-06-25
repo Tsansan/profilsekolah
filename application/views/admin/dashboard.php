@@ -1,0 +1,720 @@
+<!-- <!doctype html>
+<html class="light" lang="id">
+	<head>
+		<meta charset="utf-8" />
+		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+		<title>Dashboard Admin | SMPN 2 Sidoharjo</title>
+		<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Montserrat:wght@100..900&amp;display=swap"
+			rel="stylesheet"
+		/>
+		<script id="tailwind-config">
+			tailwind.config = {
+				darkMode: "class",
+				theme: {
+					extend: {
+						colors: {
+							secondary: "#006591",
+							"on-secondary": "#ffffff",
+							"on-primary-fixed": "#001453",
+							"inverse-on-surface": "#eaf1ff",
+							"on-secondary-container": "#004666",
+							primary: "#00288e",
+							"on-secondary-fixed": "#001e2f",
+							"primary-container": "#1e40af",
+							surface: "#f8f9ff",
+							"on-secondary-fixed-variant": "#004c6e",
+							"outline-variant": "#c4c5d5",
+							"error-container": "#ffdad6",
+							"secondary-fixed": "#c9e6ff",
+							"secondary-fixed-dim": "#89ceff",
+							"on-tertiary-container": "#ffa929",
+							"surface-container-low": "#eff4ff",
+							"on-background": "#0b1c30",
+							"surface-dim": "#cbdbf5",
+							"tertiary-container": "#6b4200",
+							error: "#ba1a1a",
+							"surface-variant": "#d3e4fe",
+							"on-tertiary-fixed": "#2a1700",
+							"surface-container-high": "#dce9ff",
+							"surface-bright": "#f8f9ff",
+							"on-primary-fixed-variant": "#173bab",
+							"inverse-surface": "#213145",
+							"on-surface": "#0b1c30",
+							background: "#f8f9ff",
+							tertiary: "#4c2e00",
+							"surface-container-highest": "#d3e4fe",
+							"on-tertiary-fixed-variant": "#653e00",
+							"primary-fixed": "#dde1ff",
+							"secondary-container": "#39b8fd",
+							"tertiary-fixed-dim": "#ffb95f",
+							"surface-container": "#e5eeff",
+							"primary-fixed-dim": "#b8c4ff",
+							"on-error": "#ffffff",
+							"surface-tint": "#3755c3",
+							"on-primary": "#ffffff",
+							"on-error-container": "#93000a",
+							"inverse-primary": "#b8c4ff",
+							"tertiary-fixed": "#ffddb8",
+							"on-tertiary": "#ffffff",
+							"surface-container-lowest": "#ffffff",
+							outline: "#757684",
+							"on-surface-variant": "#444653",
+							"on-primary-container": "#a8b8ff",
+						},
+						borderRadius: {
+							DEFAULT: "0.125rem",
+							lg: "0.25rem",
+							xl: "0.5rem",
+							full: "0.75rem",
+						},
+						spacing: {
+							xs: "8px",
+							base: "4px",
+							xl: "80px",
+							lg: "48px",
+							"margin-desktop": "auto",
+							gutter: "24px",
+							md: "24px",
+							sm: "16px",
+							"margin-mobile": "16px",
+							"max-width": "1280px",
+						},
+						fontFamily: {
+							"headline-lg-mobile": ["Montserrat"],
+							caption: ["Inter"],
+							"headline-lg": ["Montserrat"],
+							"body-md": ["Inter"],
+							"body-lg": ["Inter"],
+							"display-lg": ["Montserrat"],
+							"label-md": ["Inter"],
+							"headline-md": ["Montserrat"],
+						},
+						fontSize: {
+							"headline-lg-mobile": [
+								"24px",
+								{ lineHeight: "32px", fontWeight: "700" },
+							],
+							caption: ["12px", { lineHeight: "16px", fontWeight: "400" }],
+							"headline-lg": [
+								"32px",
+								{ lineHeight: "40px", fontWeight: "700" },
+							],
+							"body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+							"body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+							"display-lg": [
+								"48px",
+								{
+									lineHeight: "56px",
+									letterSpacing: "-0.02em",
+									fontWeight: "700",
+								},
+							],
+							"label-md": [
+								"14px",
+								{
+									lineHeight: "20px",
+									letterSpacing: "0.01em",
+									fontWeight: "600",
+								},
+							],
+							"headline-md": [
+								"24px",
+								{ lineHeight: "32px", fontWeight: "600" },
+							],
+						},
+					},
+				},
+			};
+		</script>
+		<style>
+			.material-symbols-outlined {
+				font-variation-settings:
+					"FILL" 0,
+					"wght" 400,
+					"GRAD" 0,
+					"opsz" 24;
+			}
+			::-webkit-scrollbar {
+				width: 8px;
+			}
+			::-webkit-scrollbar-track {
+				background: #f1f1f1;
+			}
+			::-webkit-scrollbar-thumb {
+				background: #00288e;
+				border-radius: 4px;
+			}
+		</style>
+	</head>
+	<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+		SideNavBar Shell
+		<aside
+			class="h-screen w-64 fixed left-0 top-0 bg-primary dark:bg-inverse-surface shadow-md flex flex-col p-sm z-50"
+		>
+			<div class="flex flex-col items-center mb-lg px-xs">
+				<div
+					class="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-base shadow-lg overflow-hidden border-2 border-on-primary-container"
+				>
+					<img
+						alt="Logo SMP Negeri 2 Sidoharjo"
+						class="w-12 h-12"
+						src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfd30H1Kaqk0UNq3Ky7p_7LixLZMiLkjNAqwr8JTbrk9XZi7pBgKYdHumRiyf-ao7xYI2ByoMxYPVqsZNit3Z77o7gbKk6x1jVn9oGApIR8M6eeasFcaWBabb7VJRymw7qKNUPhXaVvQ5SDUtlLZjx_DxAb3Ge48niYGJ5JbQIF_vzUVET3e2NnwbIIvzY_0y8wWai7C3RhJQxgHDn9_UTfFXkp38b5S4S7h0GLCKVpC7SUSZKN7u0oR-f5WcQEuJ7gGJtd6t0ag"
+					/>
+				</div>
+				<h1
+					class="text-headline-md font-headline-md text-on-primary text-center leading-tight"
+				>
+					SMPN 2 Sidoharjo
+				</h1>
+				<p class="font-label-md text-label-md text-on-primary opacity-80">
+					Admin Panel
+				</p>
+			</div>
+			<nav class="flex-1 space-y-base overflow-y-auto">
+				<a
+					class="flex items-center gap-3 px-4 py-3 bg-secondary-container text-on-secondary-container rounded-lg cursor-pointer transition-all active:scale-95 font-label-md text-label-md"
+					href="#"
+				>
+					<span
+						class="material-symbols-outlined"
+						style="font-variation-settings: &quot;FILL&quot; 1"
+						>dashboard</span
+					>
+					<span class="">Dashboard</span>
+				</a>
+				<a
+					class="flex items-center gap-3 px-4 py-3 text-on-primary opacity-80 hover:bg-primary-container hover:opacity-100 transition-colors cursor-pointer transition-all active:scale-95 font-label-md text-label-md"
+					href="#"
+				>
+					<span class="material-symbols-outlined">newspaper</span>
+					<span class="">Berita</span>
+				</a>
+				<a
+					class="flex items-center gap-3 px-4 py-3 text-on-primary opacity-80 hover:bg-primary-container hover:opacity-100 transition-colors cursor-pointer transition-all active:scale-95 font-label-md text-label-md"
+					href="#"
+					><span class="material-symbols-outlined">school</span
+					><span class="">Profil</span></a
+				>
+
+				<a
+					class="flex items-center gap-3 px-4 py-3 text-on-primary opacity-80 hover:bg-primary-container hover:opacity-100 transition-colors cursor-pointer transition-all active:scale-95 font-label-md text-label-md"
+					href="#"
+					><span class="material-symbols-outlined">mail</span
+					><span class="">Pesan Masuk</span></a
+				>
+			</nav>
+			<div class="mt-auto border-t border-white/10 pt-sm">
+				<div
+					class="flex items-center gap-3 px-4 py-3 text-on-primary opacity-80"
+				>
+					<img
+						alt="Admin Avatar"
+						class="w-8 h-8 rounded-full border border-on-primary"
+						src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLEwTJnNB24T7YQw_9XaIc1nS-_Je89o5ac6305AnrAQLFVXwYaPDt8pwYRWHTYvtazZu4GB3RiYGk00EHumGYC60I7w6rjtutDhn47jtQwDtI1-WZPwa1vQPoBS3SNFLcRhkln7nBuh95c27KFO3br940L62QvBURaxAdhBsBLgAeqs1gv_PC984sQ7QT-7oCLEH1A8xmEjShTk3W81bFJb0tEemBU8HJ36t1tgvYx6Vllus6N2jaasXxof8pI7w_kJZ7FYaVXw"
+					/>
+					<div class="overflow-hidden">
+						<p class="font-label-md truncate">Admin Utama</p>
+						<p class="text-[10px] opacity-60">Superadmin</p>
+					</div>
+				</div>
+			</div>
+		</aside>
+		TopNavBar Shell
+		<header
+			class="h-16 fixed top-0 right-0 left-64 bg-surface dark:bg-background border-b border-outline-variant flex justify-between items-center px-md z-40"
+		>
+			<div class="flex items-center gap-md">
+				<h2 class="font-headline-md text-headline-md text-on-surface">
+					Dashboard
+				</h2>
+				<div class="relative w-80">
+					<span
+						class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline"
+						>search</span
+					>
+					<input
+						class="w-full bg-surface-container-low border-none rounded-full pl-10 pr-4 py-2 text-label-md focus:ring-2 focus:ring-primary transition-all"
+						placeholder="Cari laporan, pesan, berita..."
+						type="text"
+					/>
+				</div>
+			</div>
+			<div class="flex items-center gap-sm">
+				<button
+					class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-surface-variant transition-colors text-on-surface-variant cursor-pointer"
+				>
+					<span class="material-symbols-outlined">notifications</span>
+				</button>
+				<button
+					class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-surface-variant transition-colors text-on-surface-variant cursor-pointer"
+				>
+					<span class="material-symbols-outlined">help</span>
+				</button>
+				<div class="h-8 w-px bg-outline-variant mx-xs"></div>
+				<div
+					class="flex items-center gap-3 hover:bg-surface-variant p-2 rounded-lg transition-colors cursor-pointer"
+				>
+					<span class="font-label-md text-on-surface">Admin Utama</span>
+					<img
+						alt="Admin Avatar"
+						class="w-8 h-8 rounded-full"
+						src="https://lh3.googleusercontent.com/aida-public/AB6AXuCT9ufkldufQPYIIXdAurA9x3F7W6Lkyw8MXbKjouqppoEMciPj0eGsSS7Y_s6YMIVpEA2W_5ol_ad_sXb7UWnrnVXT9yTPW5h2XLTy-97ddB4W2DjT1-UfGejWyubH9h4IeM44Rdwi3QFdABSbcvz-g936_dRG14F0B05Bs4TSNv96h_vRuScXp_wVXsN-1LilvrnFXuODuLPiAUgNKp5S01knkrCRc-6lhPGkssjYJi5M6TJH78UUSk4DOzzm3ugBPvdjC4xyfQ"
+					/>
+				</div>
+			</div>
+		</header> -->
+		<!-- Main Content Canvas -->
+		<main class="ml-64 mt-16 p-md min-h-[calc(100vh-64px)] bg-surface">
+			<!-- Animated Header Background -->
+			<div
+				class="relative w-full h-48 mb-lg rounded-xl overflow-hidden shadow-sm group"
+			>
+				<div
+					class="absolute inset-0 bg-gradient-to-r from-primary/90 to-transparent flex flex-col justify-center px-lg text-white"
+				>
+					<h3 class="font-headline-lg text-headline-lg mb-xs">
+						Selamat Datang, Admin!
+					</h3>
+					<p class="font-body-lg text-body-lg max-w-lg opacity-90">
+						Kelola informasi sekolah dan interaksi komunitas dalam satu
+						dashboard terpadu SMP Negeri 2 Sidoharjo.
+					</p>
+				</div>
+			</div>
+			<!-- Summary Cards Grid -->
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-md mb-lg">
+				<!-- News Stats -->
+				<div
+					class="bg-white p-md rounded-xl border border-outline-variant shadow-sm hover:shadow-md transition-shadow group relative overflow-hidden"
+				>
+					<div class="flex justify-between items-start">
+						<div>
+							<p class="text-on-surface-variant font-label-md mb-base">
+								Total Postingan Berita
+							</p>
+							<h4 class="text-display-lg font-display-lg text-primary">124</h4>
+							<p
+								class="text-green-600 font-label-md flex items-center gap-1 mt-base"
+							>
+								<span class="material-symbols-outlined text-[18px]"
+									>trending_up</span
+								>
+								+12 bulan ini
+							</p>
+						</div>
+						<div class="bg-primary-container/10 p-3 rounded-xl text-primary">
+							<span class="material-symbols-outlined text-[32px]"
+								>newspaper</span
+							>
+						</div>
+					</div>
+				</div>
+				<!-- Message Stats -->
+				<div
+					class="bg-white p-md rounded-xl border border-outline-variant shadow-sm hover:shadow-md transition-shadow group relative overflow-hidden"
+				>
+					<div class="flex justify-between items-start">
+						<div>
+							<p class="text-on-surface-variant font-label-md mb-base">
+								Pesan Masuk
+							</p>
+							<h4 class="text-display-lg font-display-lg text-secondary">42</h4>
+							<p
+								class="text-yellow-600 font-label-md flex items-center gap-1 mt-base"
+							>
+								<span class="material-symbols-outlined text-[18px]"
+									>pending_actions</span
+								>
+								8 belum dibaca
+							</p>
+						</div>
+						<div
+							class="bg-secondary-container/10 p-3 rounded-xl text-secondary"
+						>
+							<span class="material-symbols-outlined text-[32px]">mail</span>
+						</div>
+					</div>
+				</div>
+				<!-- Visitor Stats -->
+				<div
+					class="bg-white p-md rounded-xl border border-outline-variant shadow-sm hover:shadow-md transition-shadow group relative overflow-hidden"
+				>
+					<div class="flex justify-between items-start">
+						<div>
+							<p class="text-on-surface-variant font-label-md mb-base">
+								Pengunjung Aktif
+							</p>
+							<h4 class="text-display-lg font-display-lg text-primary">856</h4>
+							<p
+								class="text-green-600 font-label-md flex items-center gap-1 mt-base"
+							>
+								<span class="material-symbols-outlined text-[18px]"
+									>visibility</span
+								>
+								+15% dari hari kemarin
+							</p>
+						</div>
+						<div class="bg-primary-container/10 p-3 rounded-xl text-primary">
+							<span class="material-symbols-outlined text-[32px]">group</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Bento Grid Section -->
+			<div class="grid grid-cols-12 gap-md items-start">
+				<!-- Recent Activities Table (Bento Col 8) -->
+				<section
+					class="col-span-12 lg:col-span-8 bg-white border border-outline-variant rounded-xl overflow-hidden shadow-sm"
+				>
+					<div
+						class="p-md flex justify-between items-center border-b border-outline-variant bg-surface-container-low"
+					>
+						<h5 class="font-headline-md text-headline-md">
+							Aktivitas Terkini Berita
+						</h5>
+						<button
+							class="bg-primary text-white px-4 py-2 rounded-full font-label-md hover:bg-primary-container transition-colors flex items-center gap-2"
+						>
+							<span class="material-symbols-outlined text-[20px]">add</span>
+							Berita Baru
+						</button>
+					</div>
+					<div class="overflow-x-auto">
+						<table class="w-full text-left">
+							<thead>
+								<tr
+									class="bg-surface text-on-surface-variant font-label-md border-b border-outline-variant"
+								>
+									<th class="px-md py-4">Judul Berita</th>
+									<th class="px-md py-4">Kategori</th>
+									<th class="px-md py-4">Tanggal</th>
+									<th class="px-md py-4">Status</th>
+									<th class="px-md py-4 text-center">Aksi</th>
+								</tr>
+							</thead>
+							<tbody class="text-body-md divide-y divide-outline-variant">
+								<tr
+									class="hover:bg-surface-container-low transition-colors group"
+								>
+									<td class="px-md py-4">
+										<div class="flex items-center gap-3">
+											<div
+												class="w-10 h-10 rounded-lg overflow-hidden shrink-0"
+											>
+												<img
+													alt="News Image"
+													class="w-full h-full object-cover"
+													data-alt="A clean, professional photograph of a group of secondary school students in formal blue uniforms smiling while working together on a collaborative project in a brightly lit modern classroom. The lighting is soft and natural, emphasizing a positive and focused academic environment. The overall aesthetic is clean and corporate, utilizing a palette of deep blues and bright whites."
+													src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhj9VT8kGPbjPHDYCBGnKEe_7klx3_0qMbRyRwE8fu6aMcGDmS8crpaIlh9gtXTXpq6QAoHev1ugyVSbFyLQHaiKwlta5xLOx1b8-fG6Zkcvsu3mH4qlEoIIyOOB3j94dFOHxqFCcTWZTOpepFWQtPXYfgXTSj7LLogxgHtv1v9TcBcjrHpxBxY3KOA0DOS3UiIT3AkNmyXekIbW4urOT-IvP5WpWE-RMkOnpsqjv1uLEyio32cVDgdjk2wef6lKfmAVUdaAbhiQ"
+												/>
+											</div>
+											<span class="font-medium text-on-surface line-clamp-1"
+												>Penerimaan Siswa Baru TA 2024/2025</span
+											>
+										</div>
+									</td>
+									<td class="px-md py-4">
+										<span
+											class="bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-full text-caption"
+											>Akademik</span
+										>
+									</td>
+									<td class="px-md py-4 text-on-surface-variant">
+										24 Mei 2024
+									</td>
+									<td class="px-md py-4">
+										<span
+											class="inline-flex items-center gap-1 text-green-600 font-label-md"
+										>
+											<span class="w-2 h-2 rounded-full bg-green-600"></span>
+											Published
+										</span>
+									</td>
+									<td class="px-md py-4">
+										<div class="flex justify-center gap-2">
+											<button
+												class="p-2 hover:bg-surface-variant rounded-full text-primary"
+											>
+												<span class="material-symbols-outlined">edit</span>
+											</button>
+											<button
+												class="p-2 hover:bg-surface-variant rounded-full text-error"
+											>
+												<span class="material-symbols-outlined">delete</span>
+											</button>
+										</div>
+									</td>
+								</tr>
+								<tr
+									class="hover:bg-surface-container-low transition-colors group"
+								>
+									<td class="px-md py-4">
+										<div class="flex items-center gap-3">
+											<div
+												class="w-10 h-10 rounded-lg overflow-hidden shrink-0"
+											>
+												<img
+													alt="News Image"
+													class="w-full h-full object-cover"
+													data-alt="A vibrant and crisp image showing various high-quality sports equipment like a soccer ball and basketball arranged neatly on a polished wooden gymnasium floor. Warm sunlight streams through large high-set windows, creating long shadows and a sense of energy and institutional pride. The image focuses on cleanliness and modern educational facilities, maintaining a professional academic atmosphere."
+													src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbYBJF_CU1LLIHsDAsmBcr_u7y0__JeyOPD9R5OGIsEX2VoQIaSobu5XhmjtXVoC6Ot7_wkKFLe_f5pdnqbJYWRcaBYYh5QnGf7NJvnVc222no2VwsJCXySRKvLShnGZYljylCsApyCkvyDGTflhChK9XSnnYzEOjrA5C6-BPJzFBiXm0mQ4SmKWQJO1eGqatgHqWvDrllsgsaqskVwDo0fdpwtESI2zOF24fp27_LDNtOKGUOx6ghMPC6o5bwkhsApKvSKdu3-Q"
+												/>
+											</div>
+											<span class="font-medium text-on-surface line-clamp-1"
+												>Juara 1 Lomba Basket Tingkat Provinsi</span
+											>
+										</div>
+									</td>
+									<td class="px-md py-4">
+										<span
+											class="bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1 rounded-full text-caption"
+											>Prestasi</span
+										>
+									</td>
+									<td class="px-md py-4 text-on-surface-variant">
+										22 Mei 2024
+									</td>
+									<td class="px-md py-4">
+										<span
+											class="inline-flex items-center gap-1 text-green-600 font-label-md"
+										>
+											<span class="w-2 h-2 rounded-full bg-green-600"></span>
+											Published
+										</span>
+									</td>
+									<td class="px-md py-4">
+										<div class="flex justify-center gap-2">
+											<button
+												class="p-2 hover:bg-surface-variant rounded-full text-primary"
+											>
+												<span class="material-symbols-outlined">edit</span>
+											</button>
+											<button
+												class="p-2 hover:bg-surface-variant rounded-full text-error"
+											>
+												<span class="material-symbols-outlined">delete</span>
+											</button>
+										</div>
+									</td>
+								</tr>
+								<tr
+									class="hover:bg-surface-container-low transition-colors group"
+								>
+									<td class="px-md py-4">
+										<div class="flex items-center gap-3">
+											<div
+												class="w-10 h-10 rounded-lg overflow-hidden shrink-0"
+											>
+												<img
+													alt="News Image"
+													class="w-full h-full object-cover"
+													data-alt="A detailed, close-up shot of a modern computer laboratory inside a school, with sleek desktop monitors displaying educational coding software. The room is designed with minimalist aesthetics, featuring white walls and blue accent chairs. The lighting is bright and uniform, reflecting a high-tech and trustworthy learning environment consistent with prestigious academic branding."
+													src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVSNw0EGWoE6kV6BHgnvpl8aq0ZfAqejbgYHhuzCidYavKYbMjKwm8y28ie_qUieMPgFLkkAuQEG_fj5ymeK3CHjjNVCV4L9fGt5QfVahhAws4T2k3n3d7ZcO_XcGREbW2z3RmJ382jqaCdyXP_kt4DRjqgir6gamm_YU2MiUM2XHdG2uDTDbtCLyEm8VIsa0l3LOfj4-mM7R1E9pgtEM_Z_FY_zhfRPm_dUzhcM9dK5vK7NthJlYIbnm0ajRZ-nkTFnnSRv4r5g"
+												/>
+											</div>
+											<span class="font-medium text-on-surface line-clamp-1"
+												>Pembaruan Fasilitas Lab Komputer</span
+											>
+										</div>
+									</td>
+									<td class="px-md py-4">
+										<span
+											class="bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-full text-caption"
+											>Fasilitas</span
+										>
+									</td>
+									<td class="px-md py-4 text-on-surface-variant">
+										20 Mei 2024
+									</td>
+									<td class="px-md py-4">
+										<span
+											class="inline-flex items-center gap-1 text-on-surface-variant font-label-md"
+										>
+											<span class="w-2 h-2 rounded-full bg-outline"></span>
+											Draft
+										</span>
+									</td>
+									<td class="px-md py-4">
+										<div class="flex justify-center gap-2">
+											<button
+												class="p-2 hover:bg-surface-variant rounded-full text-primary"
+											>
+												<span class="material-symbols-outlined">edit</span>
+											</button>
+											<button
+												class="p-2 hover:bg-surface-variant rounded-full text-error"
+											>
+												<span class="material-symbols-outlined">delete</span>
+											</button>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="p-md border-t border-outline-variant flex justify-center">
+						<button class="text-primary font-label-md hover:underline">
+							Lihat Semua Berita
+						</button>
+					</div>
+				</section>
+				<!-- Incoming Messages Summary (Bento Col 4) -->
+				<section class="col-span-12 lg:col-span-4 space-y-md">
+					<div
+						class="bg-white border border-outline-variant rounded-xl overflow-hidden shadow-sm"
+					>
+						<div
+							class="p-md border-b border-outline-variant bg-surface-container-low flex justify-between items-center"
+						>
+							<h5 class="font-headline-md text-headline-md">Pesan Baru</h5>
+							<span
+								class="bg-error text-white text-[10px] px-2 py-0.5 rounded-full"
+								>8 Baru</span
+							>
+						</div>
+						<div class="divide-y divide-outline-variant">
+							<!-- Message Item -->
+							<div
+								class="p-md hover:bg-surface-container-low transition-all cursor-pointer group"
+							>
+								<div class="flex gap-3 mb-xs">
+									<div
+										class="w-10 h-10 rounded-full bg-primary-container/10 flex items-center justify-center shrink-0"
+									>
+										<span class="material-symbols-outlined text-primary"
+											>person</span
+										>
+									</div>
+									<div class="flex-1 min-w-0">
+										<div class="flex justify-between items-start">
+											<h6 class="font-label-md text-on-surface truncate">
+												Budi Santoso
+											</h6>
+											<span class="text-caption text-on-surface-variant"
+												>10:45</span
+											>
+										</div>
+										<p class="text-caption text-secondary font-medium">
+											Pertanyaan Pendaftaran
+										</p>
+									</div>
+								</div>
+								<p
+									class="text-body-md text-on-surface-variant line-clamp-2 italic"
+								>
+									"Mohon info lengkap mengenai persyaratan berkas fisik untuk
+									pendaftaran siswa baru jalur prestasi..."
+								</p>
+							</div>
+							<!-- Message Item -->
+							<div
+								class="p-md hover:bg-surface-container-low transition-all cursor-pointer group"
+							>
+								<div class="flex gap-3 mb-xs">
+									<div
+										class="w-10 h-10 rounded-full bg-primary-container/10 flex items-center justify-center shrink-0"
+									>
+										<span class="material-symbols-outlined text-primary"
+											>person</span
+										>
+									</div>
+									<div class="flex-1 min-w-0">
+										<div class="flex justify-between items-start">
+											<h6 class="font-label-md text-on-surface truncate">
+												Siti Aminah
+											</h6>
+											<span class="text-caption text-on-surface-variant"
+												>Kemarin</span
+											>
+										</div>
+										<p class="text-caption text-secondary font-medium">
+											Kontak Kerjasama
+										</p>
+									</div>
+								</div>
+								<p
+									class="text-body-md text-on-surface-variant line-clamp-2 italic"
+								>
+									"Kami dari lembaga bimbel ingin menawarkan kerjasama try-out
+									gratis untuk siswa kelas 9..."
+								</p>
+							</div>
+						</div>
+						<div class="p-md border-t border-outline-variant">
+							<button
+								class="w-full py-3 text-primary border border-primary rounded-xl font-label-md hover:bg-primary-container/5 transition-colors"
+							>
+								Buka Semua Pesan
+							</button>
+						</div>
+					</div>
+					<!-- Teacher on Duty Card -->
+					<div
+						class="bg-primary text-white p-md rounded-xl shadow-lg relative overflow-hidden group"
+					>
+						<div class="relative z-10">
+							<p
+								class="text-caption opacity-80 uppercase tracking-wider mb-base"
+							>
+								Guru Piket Hari Ini
+							</p>
+							<div class="flex items-center gap-3">
+								<img
+									alt="Teacher Avatar"
+									class="w-12 h-12 rounded-full border-2 border-white/20"
+									src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8rr1OBw__C1sJqrvzInw-G4zoNQZ3KcFAIa3DKJGLiWYrISKm2d34Gbel41iU9drT7oCSrgev5UNI8JD8fyk-j7Um_H632bfut-5p6V65AGGQ3EU-sPXwxog9B-ce3xAk43mAtgCWHpFybb7h_FXxJaOrHNMhNq6xX8epTAM0mbB_LRzqNzpk0AO1VSl1fH2Ko1L1PD0h74nFRjDMOQKbEmSkCf39PjBMkEnsenIeBJDWD5T2Drmp-XD6Y2gNQ2zpWhwhO4XMWw"
+								/>
+								<div>
+									<h6 class="font-headline-md text-[18px]">
+										Drs. Sugeng Riyadi
+									</h6>
+									<p class="text-caption opacity-80">Mata Pelajaran: IPA</p>
+								</div>
+							</div>
+						</div>
+						<!-- Subtle background decoration -->
+						<div
+							class="absolute -right-4 -bottom-4 opacity-10 group-hover:scale-110 transition-transform duration-700"
+						>
+							<span class="material-symbols-outlined text-[120px]">school</span>
+						</div>
+					</div>
+				</section>
+			</div>
+		</main>
+		<!-- <script>
+			// Micro-interaction for hover effects on table rows
+			document.querySelectorAll("tr").forEach((row) => {
+				row.addEventListener("mouseenter", () => {
+					row.style.transform = "translateX(4px)";
+				});
+				row.addEventListener("mouseleave", () => {
+					row.style.transform = "translateX(0px)";
+				});
+			});
+
+			// Simple real-time clock indicator in TopNavBar (optional addition)
+			const updateClock = () => {
+				const now = new Date();
+				const options = {
+					weekday: "long",
+					year: "numeric",
+					month: "long",
+					day: "numeric",
+				};
+				// Normally we'd put this in the UI
+			};
+			setInterval(updateClock, 1000);
+		</script>
+	</body>
+</html> -->
