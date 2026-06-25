@@ -1,0 +1,690 @@
+<!doctype html>
+<html lang="id" style="">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Montserrat:wght@100..900&amp;display=swap"
+            rel="stylesheet"
+        />
+        <script id="tailwind-config">
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        colors: {
+                            secondary: "#006591",
+                            "on-secondary": "#ffffff",
+                            "on-primary-fixed": "#001453",
+                            "inverse-on-surface": "#eaf1ff",
+                            "on-secondary-container": "#004666",
+                            primary: "#00288e",
+                            "on-secondary-fixed": "#001e2f",
+                            "primary-container": "#1e40af",
+                            surface: "#f8f9ff",
+                            "on-secondary-fixed-variant": "#004c6e",
+                            "outline-variant": "#c4c5d5",
+                            "error-container": "#ffdad6",
+                            "secondary-fixed": "#c9e6ff",
+                            "secondary-fixed-dim": "#89ceff",
+                            "on-tertiary-container": "#ffa929",
+                            "surface-container-low": "#eff4ff",
+                            "on-background": "#0b1c30",
+                            "surface-dim": "#cbdbf5",
+                            "tertiary-container": "#6b4200",
+                            error: "#ba1a1a",
+                            "surface-variant": "#d3e4fe",
+                            "on-tertiary-fixed": "#2a1700",
+                            "surface-container-high": "#dce9ff",
+                            "surface-bright": "#f8f9ff",
+                            "on-primary-fixed-variant": "#173bab",
+                            "inverse-surface": "#213145",
+                            "on-surface": "#0b1c30",
+                            background: "#f8f9ff",
+                            tertiary: "#4c2e00",
+                            "surface-container-highest": "#d3e4fe",
+                            "on-tertiary-fixed-variant": "#653e00",
+                            "primary-fixed": "#dde1ff",
+                            "secondary-container": "#39b8fd",
+                            "tertiary-fixed-dim": "#ffb95f",
+                            "surface-container": "#e5eeff",
+                            "primary-fixed-dim": "#b8c4ff",
+                            "on-error": "#ffffff",
+                            "surface-tint": "#3755c3",
+                            "on-primary": "#ffffff",
+                            "on-error-container": "#93000a",
+                            "inverse-primary": "#b8c4ff",
+                            "tertiary-fixed": "#ffddb8",
+                            "on-tertiary": "#ffffff",
+                            "surface-container-lowest": "#ffffff",
+                            outline: "#757684",
+                            "on-surface-variant": "#444653",
+                            "on-primary-container": "#a8b8ff",
+                        },
+                        borderRadius: {
+                            DEFAULT: "0.125rem",
+                            lg: "0.25rem",
+                            xl: "0.5rem",
+                            full: "0.75rem",
+                        },
+                        spacing: {
+                            xs: "8px",
+                            base: "4px",
+                            xl: "80px",
+                            lg: "48px",
+                            "margin-desktop": "auto",
+                            gutter: "24px",
+                            md: "24px",
+                            sm: "16px",
+                            "margin-mobile": "16px",
+                            "max-width": "1280px",
+                        },
+                        fontFamily: {
+                            "headline-lg-mobile": ["Montserrat"],
+                            caption: ["Inter"],
+                            "headline-lg": ["Montserrat"],
+                            "body-md": ["Inter"],
+                            "body-lg": ["Inter"],
+                            "display-lg": ["Montserrat"],
+                            "label-md": ["Inter"],
+                            "headline-md": ["Montserrat"],
+                        },
+                        fontSize: {
+                            "headline-lg-mobile": [
+                                "24px",
+                                { lineHeight: "32px", fontWeight: "700" },
+                            ],
+                            caption: ["12px", { lineHeight: "16px", fontWeight: "400" }],
+                            "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "700" }],
+                            "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                            "display-lg": [
+                                "48px",
+                                { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" },
+                            ],
+                            "label-md": [
+                                "14px",
+                                { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600" },
+                            ],
+                            "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+                        },
+                    },
+                },
+            };
+        </script>
+        <style>
+            .material-symbols-outlined {
+                font-variation-settings:
+                    "FILL" 0,
+                    "wght" 400,
+                    "GRAD" 0,
+                    "opsz" 24;
+            }
+            body {
+                background-color: #f8fafc;
+            }
+            .message-row:hover {
+                background-color: #f1f5f9;
+            }
+        </style>
+    </head>
+    <body class="font-body-md text-on-surface">
+        <!-- SideNavBar -->
+        <aside
+            class="h-screen w-64 fixed left-0 top-0 bg-primary dark:bg-inverse-surface shadow-md flex flex-col p-sm"
+        >
+            <div class="flex items-center gap-3 px-4 py-6 mb-8">
+                <div
+                    class="w-10 h-10 rounded-xl bg-on-primary flex items-center justify-center text-primary shadow-sm"
+                >
+                    <span class="material-symbols-outlined">school</span>
+                </div>
+                <div class="">
+                    <h1 class="text-headline-md font-bold text-on-primary leading-tight">SMPN 2</h1>
+                    <p class="text-label-md text-on-primary/70">Sidoharjo</p>
+                </div>
+            </div>
+            <nav class="space-y-2 flex-grow">
+                <a
+                    class="flex items-center gap-3 px-4 py-3 text-on-primary/80 hover:bg-white/10 rounded-xl transition-all active:scale-95 group"
+                    href="#"
+                    ><span class="material-symbols-outlined">dashboard</span
+                    ><span class="font-medium">Dashboard</span></a
+                ><a
+                    class="flex items-center gap-3 px-4 py-3 text-on-primary/80 hover:bg-white/10 rounded-xl transition-all active:scale-95 group"
+                    href="#"
+                    ><span class="material-symbols-outlined">newspaper</span
+                    ><span class="font-medium">Berita</span></a
+                ><a
+                    class="flex items-center gap-3 px-4 py-3 text-on-primary/80 hover:bg-white/10 rounded-xl transition-all active:scale-95 group"
+                    href="#"
+                    ><span class="material-symbols-outlined">school</span
+                    ><span class="font-medium">Profil Sekolah</span></a
+                ><a
+                    class="flex items-center gap-3 px-4 py-3 bg-white text-primary rounded-xl shadow-md transition-all active:scale-95 group"
+                    href="#"
+                    ><span class="material-symbols-outlined">mail</span
+                    ><span class="font-bold">Pesan Masuk</span></a
+                >
+            </nav>
+            <div class="mt-auto p-4 border-t border-on-primary/10">
+                <div class="flex items-center gap-3">
+                    <img
+                        alt="Admin Avatar"
+                        class="w-10 h-10 rounded-full border-2 border-on-primary/20"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyHpdSPaZ1y6zdhpFFtOaGzhd14A0zpCThyN38kOXQNcmB8r1Hyg__gc5lypcy2-U3zH6Q5VCrfvpkn20UL3a4E6YLvnT7yt1UW0vJAkWwoFvDHdHYNMBgcD35CiMSaHQiZEr_nVQy9NVC3u27eCVFJ7r5LCWDMA3VfM3Vdh9uNkJS7y7OH_1ew0BV94lsstUsY2QpCpsYs2cyP068WxQ8U9RD1Qf3HeGyfU50yDeY1PgCdSChbaEMJU1wR3AGMjufFqzS3MzxdQ"
+                    />
+                    <div class="overflow-hidden">
+                        <p class="text-on-primary font-label-md truncate">Admin Utama</p>
+                        <p class="text-on-primary/60 text-caption truncate">
+                            administrator@smpn2.sch.id
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!-- TopNavBar -->
+        <header
+            class="h-16 fixed top-0 right-0 left-64 bg-surface dark:bg-background border-b border-outline-variant flex justify-between items-center px-md z-10"
+        >
+            <div class="flex items-center gap-4">
+                <h2 class="font-bold text-lg text-on-surface">Pesan Masuk</h2>
+                <div class="relative ml-4">
+                    <span
+                        class="absolute inset-y-0 left-0 pl-3 flex items-center text-on-surface-variant"
+                        ><span class="material-symbols-outlined text-sm">search</span></span
+                    ><input
+                        class="pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-xl text-sm focus:ring-2 focus:ring-primary outline-none w-80"
+                        placeholder="Cari pesan atau pengirim..."
+                        type="text"
+                    />
+                </div>
+            </div>
+            <div class="flex items-center gap-2">
+                <button
+                    class="w-10 h-10 flex items-center justify-center text-on-surface-variant hover:bg-surface-variant rounded-full transition-colors"
+                >
+                    <span class="material-symbols-outlined">notifications</span></button
+                ><button
+                    class="w-10 h-10 flex items-center justify-center text-on-surface-variant hover:bg-surface-variant rounded-full transition-colors"
+                >
+                    <span class="material-symbols-outlined">help</span>
+                </button>
+                <div class="h-6 w-px bg-outline-variant mx-2"></div>
+                <div class="flex items-center gap-3 pl-2">
+                    <div class="text-right hidden md:block">
+                        <p class="text-sm font-bold text-on-surface">Admin Utama</p>
+                        <p class="text-xs text-on-surface-variant">Administrator</p>
+                    </div>
+                    <img
+                        alt="Admin"
+                        class="w-10 h-10 rounded-full border-2 border-primary/20"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7sqIK2ByalelF7B61dJbZGvhwcyukNoWsXK8XKYUDvZlgK1MqHmUw_HyVc3oFPD7w-6gW8kBKNcu4Hv2X7WzkAjA2svsnrEJKvP-poUjw5IzZ5ah37BLR_rgMAwvwVnRu561BTMLYgYdx0oI8Kdi2UHnx5BAcZEmIyVb0buhFbJjYeOkxpGAi2Vvgd6nMNd8SjHN3OwWHNGbRPKGUT12avtgULPE3dzjZdeFZxZV7ybJzzO9jU-SZ5l6j0zx00fd4pKzIlwsBug"
+                    />
+                </div>
+            </div>
+        </header>
+        <!-- Main Content -->
+        <main class="ml-64 pt-16 min-h-screen bg-surface">
+            <div class="p-md max-w-max-width mx-auto">
+                <!-- Breadcrumbs & Stats -->
+                <div class="flex flex-col md:flex-row md:items-center justify-between mb-lg gap-4">
+                    <div>
+                        <h3 class="font-headline-lg text-headline-lg text-primary">
+                            Manajemen Kontak
+                        </h3>
+                        <p class="text-body-md text-on-surface-variant">
+                            Kelola pesan yang dikirim melalui formulir kontak website sekolah.
+                        </p>
+                    </div>
+                    <div class="flex gap-3">
+                        <div class="bg-surface-container-high px-4 py-2 rounded-xl flex flex-col">
+                            <span class="text-caption text-on-surface-variant">Total Pesan</span>
+                            <span class="font-headline-md text-primary">124</span>
+                        </div>
+                        <div class="bg-primary px-4 py-2 rounded-xl flex flex-col">
+                            <span class="text-caption text-on-primary opacity-80"
+                                >Belum Dibaca</span
+                            >
+                            <span class="font-headline-md text-on-primary">8</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Messages Table Container -->
+                <div
+                    class="bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm overflow-hidden"
+                >
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr
+                                    class="bg-surface-container-low border-b border-outline-variant"
+                                >
+                                    <th
+                                        class="px-6 py-4 font-label-md text-on-surface-variant uppercase tracking-wider text-xs"
+                                    >
+                                        Pengirim
+                                    </th>
+                                    <th
+                                        class="px-6 py-4 font-label-md text-on-surface-variant uppercase tracking-wider text-xs"
+                                    >
+                                        Subjek
+                                    </th>
+                                    <th
+                                        class="px-6 py-4 font-label-md text-on-surface-variant uppercase tracking-wider text-xs"
+                                    >
+                                        Tanggal
+                                    </th>
+                                    <th
+                                        class="px-6 py-4 font-label-md text-on-surface-variant uppercase tracking-wider text-xs"
+                                    >
+                                        Status
+                                    </th>
+                                    <th
+                                        class="px-6 py-4 font-label-md text-on-surface-variant uppercase tracking-wider text-xs text-right"
+                                    >
+                                        Aksi
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-outline-variant">
+                                <!-- Message Row 1 (Unread) -->
+                                <tr class="message-row transition-colors cursor-pointer group">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center gap-3">
+                                            <div
+                                                class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-bold text-xs"
+                                            >
+                                                B
+                                            </div>
+                                            <div>
+                                                <p class="font-label-md text-on-surface">
+                                                    Bambang Susanto
+                                                </p>
+                                                <p class="text-caption text-on-surface-variant">
+                                                    bambang.s@email.com
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <p class="font-label-md text-primary truncate max-w-xs">
+                                            Pertanyaan Pendaftaran Siswa Baru 2024
+                                        </p>
+                                        <p
+                                            class="text-caption text-on-surface-variant truncate max-w-xs"
+                                        >
+                                            Mohon info jadwal pendaftaran...
+                                        </p>
+                                    </td>
+                                    <td class="px-6 py-4 text-body-md text-on-surface-variant">
+                                        12 Okt 2023
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <span
+                                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-error-container text-on-error-container"
+                                        >
+                                            Belum Dibaca
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4 text-right">
+                                        <div class="flex justify-end gap-2">
+                                            <button
+                                                class="p-2 text-primary hover:bg-primary-container/10 rounded-lg transition-colors"
+                                                onclick="
+                                                    openMessageModal(
+                                                        'Bambang Susanto',
+                                                        'bambang.s@email.com',
+                                                        'Pertanyaan Pendaftaran Siswa Baru 2024',
+                                                        '12 Okt 2023',
+                                                        'Mohon informasi detail mengenai persyaratan pendaftaran siswa baru untuk tahun ajaran 2024/2025. Apakah ada jalur prestasi? Terima kasih.'
+                                                    )
+                                                "
+                                                title="Baca"
+                                            >
+                                                <span class="material-symbols-outlined"
+                                                    >visibility</span
+                                                >
+                                            </button>
+                                            <button
+                                                class="p-2 text-error hover:bg-error-container/20 rounded-lg transition-colors"
+                                                title="Hapus"
+                                            >
+                                                <span class="material-symbols-outlined"
+                                                    >delete</span
+                                                >
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- Message Row 2 -->
+                                <tr class="message-row transition-colors cursor-pointer">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center gap-3">
+                                            <div
+                                                class="w-8 h-8 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center font-bold text-xs"
+                                            >
+                                                S
+                                            </div>
+                                            <div>
+                                                <p class="font-label-md text-on-surface">
+                                                    Siti Aminah
+                                                </p>
+                                                <p class="text-caption text-on-surface-variant">
+                                                    siti.aminah@gmail.com
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <p class="font-label-md text-on-surface truncate max-w-xs">
+                                            Konfirmasi Pembayaran Seragam
+                                        </p>
+                                        <p
+                                            class="text-caption text-on-surface-variant truncate max-w-xs"
+                                        >
+                                            Saya sudah mentransfer biaya seragam untuk anak saya...
+                                        </p>
+                                    </td>
+                                    <td class="px-6 py-4 text-body-md text-on-surface-variant">
+                                        11 Okt 2023
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <span
+                                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-surface-container-highest text-on-surface-variant"
+                                        >
+                                            Terbaca
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4 text-right">
+                                        <div class="flex justify-end gap-2">
+                                            <button
+                                                class="p-2 text-primary hover:bg-primary-container/10 rounded-lg transition-colors"
+                                            >
+                                                <span class="material-symbols-outlined"
+                                                    >visibility</span
+                                                >
+                                            </button>
+                                            <button
+                                                class="p-2 text-error hover:bg-error-container/20 rounded-lg transition-colors"
+                                            >
+                                                <span class="material-symbols-outlined"
+                                                    >delete</span
+                                                >
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- Message Row 3 -->
+                                <tr class="message-row transition-colors cursor-pointer">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center gap-3">
+                                            <div
+                                                class="w-8 h-8 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-bold text-xs"
+                                            >
+                                                R
+                                            </div>
+                                            <div>
+                                                <p class="font-label-md text-on-surface">
+                                                    Rudi Hermawan
+                                                </p>
+                                                <p class="text-caption text-on-surface-variant">
+                                                    rudi.h@perusahaan.com
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <p class="font-label-md text-on-surface truncate max-w-xs">
+                                            Penawaran Kerjasama Kantin Sehat
+                                        </p>
+                                        <p
+                                            class="text-caption text-on-surface-variant truncate max-w-xs"
+                                        >
+                                            Kami dari CV Maju Jaya ingin menawarkan pengadaan...
+                                        </p>
+                                    </td>
+                                    <td class="px-6 py-4 text-body-md text-on-surface-variant">
+                                        10 Okt 2023
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <span
+                                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-surface-container-highest text-on-surface-variant"
+                                        >
+                                            Terbaca
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4 text-right">
+                                        <div class="flex justify-end gap-2">
+                                            <button
+                                                class="p-2 text-primary hover:bg-primary-container/10 rounded-lg transition-colors"
+                                            >
+                                                <span class="material-symbols-outlined"
+                                                    >visibility</span
+                                                >
+                                            </button>
+                                            <button
+                                                class="p-2 text-error hover:bg-error-container/20 rounded-lg transition-colors"
+                                            >
+                                                <span class="material-symbols-outlined"
+                                                    >delete</span
+                                                >
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- Message Row 4 -->
+                                <tr class="message-row transition-colors cursor-pointer">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center gap-3">
+                                            <div
+                                                class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-bold text-xs"
+                                            >
+                                                A
+                                            </div>
+                                            <div>
+                                                <p class="font-label-md text-on-surface">
+                                                    Ani Wijaya
+                                                </p>
+                                                <p class="text-caption text-on-surface-variant">
+                                                    ani.wijaya@outlook.com
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <p class="font-label-md text-on-surface truncate max-w-xs">
+                                            Lupa Password Akun Siswa
+                                        </p>
+                                        <p
+                                            class="text-caption text-on-surface-variant truncate max-w-xs"
+                                        >
+                                            Bagaimana cara mereset password portal akademik?
+                                        </p>
+                                    </td>
+                                    <td class="px-6 py-4 text-body-md text-on-surface-variant">
+                                        09 Okt 2023
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <span
+                                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-surface-container-highest text-on-surface-variant"
+                                        >
+                                            Terbaca
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4 text-right">
+                                        <div class="flex justify-end gap-2">
+                                            <button
+                                                class="p-2 text-primary hover:bg-primary-container/10 rounded-lg transition-colors"
+                                            >
+                                                <span class="material-symbols-outlined"
+                                                    >visibility</span
+                                                >
+                                            </button>
+                                            <button
+                                                class="p-2 text-error hover:bg-error-container/20 rounded-lg transition-colors"
+                                            >
+                                                <span class="material-symbols-outlined"
+                                                    >delete</span
+                                                >
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Pagination -->
+                    <div
+                        class="px-6 py-4 bg-surface-container-low border-t border-outline-variant flex items-center justify-between"
+                    >
+                        <p class="text-caption text-on-surface-variant">
+                            Menampilkan 1-4 dari 124 pesan
+                        </p>
+                        <div class="flex gap-2">
+                            <button
+                                class="px-3 py-1.5 border border-outline-variant rounded-lg text-label-md hover:bg-white transition-colors disabled:opacity-50"
+                                disabled=""
+                            >
+                                Sebelumnya
+                            </button>
+                            <button
+                                class="px-3 py-1.5 border border-outline-variant rounded-lg text-label-md bg-primary text-on-primary"
+                            >
+                                1
+                            </button>
+                            <button
+                                class="px-3 py-1.5 border border-outline-variant rounded-lg text-label-md hover:bg-white transition-colors"
+                            >
+                                2
+                            </button>
+                            <button
+                                class="px-3 py-1.5 border border-outline-variant rounded-lg text-label-md hover:bg-white transition-colors"
+                            >
+                                3
+                            </button>
+                            <button
+                                class="px-3 py-1.5 border border-outline-variant rounded-lg text-label-md hover:bg-white transition-colors"
+                            >
+                                Selanjutnya
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- Message Modal (Hidden by default) -->
+        <div
+            class="fixed inset-0 bg-on-background/40 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4"
+            id="messageModal"
+        >
+            <div
+                class="bg-surface-container-lowest rounded-2xl shadow-2xl max-w-2xl w-full overflow-hidden border border-outline-variant transform transition-all"
+            >
+                <div class="p-6 border-b border-outline-variant flex justify-between items-start">
+                    <div>
+                        <h4
+                            class="font-headline-md text-headline-md text-primary mb-1"
+                            id="modalSubject"
+                        >
+                            Subject Message
+                        </h4>
+                        <div class="flex items-center gap-2 text-caption text-on-surface-variant">
+                            <span id="modalDate" class="">12 Okt 2023</span>
+                            <span class="">•</span>
+                            <span id="modalEmail" class="">sender@email.com</span>
+                        </div>
+                    </div>
+                    <button
+                        class="p-1 hover:bg-surface-variant rounded-full transition-colors"
+                        onclick="closeMessageModal()"
+                    >
+                        <span class="material-symbols-outlined">close</span>
+                    </button>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div
+                            class="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold text-lg"
+                        >
+                            <span id="modalInitial" class="">B</span>
+                        </div>
+                        <div>
+                            <p class="font-label-md text-on-surface" id="modalSender">
+                                Sender Name
+                            </p>
+                            <p class="text-caption text-on-surface-variant">
+                                via Formulir Kontak Website
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-surface-container-low p-4 rounded-xl text-body-md text-on-surface-variant leading-relaxed min-h-[200px]"
+                        id="modalContent"
+                    >
+                        Content of the message goes here...
+                    </div>
+                </div>
+                <div class="p-6 border-t border-outline-variant bg-surface flex justify-end gap-3">
+                    <button
+                        class="px-6 py-2 rounded-xl font-label-md border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors"
+                        onclick="closeMessageModal()"
+                    >
+                        Tutup
+                    </button>
+                    <button
+                        class="px-6 py-2 rounded-xl font-label-md bg-primary text-on-primary hover:bg-primary-container shadow-md transition-all active:scale-95 flex items-center gap-2"
+                    >
+                        <span class="material-symbols-outlined text-sm">reply</span>
+                        Balas Email
+                    </button>
+                </div>
+            </div>
+        </div>
+        <script>
+            function openMessageModal(sender, email, subject, date, content) {
+                document.getElementById("modalSender").innerText = sender;
+                document.getElementById("modalEmail").innerText = email;
+                document.getElementById("modalSubject").innerText = subject;
+                document.getElementById("modalDate").innerText = date;
+                document.getElementById("modalContent").innerText = content;
+                document.getElementById("modalInitial").innerText = sender.charAt(0);
+
+                const modal = document.getElementById("messageModal");
+                modal.classList.remove("hidden");
+                modal.classList.add("flex");
+
+                // Animation for modal entry
+                setTimeout(() => {
+                    modal.querySelector("div").classList.add("scale-100", "opacity-100");
+                    modal.querySelector("div").classList.remove("scale-95", "opacity-0");
+                }, 10);
+            }
+
+            function closeMessageModal() {
+                const modal = document.getElementById("messageModal");
+                modal.querySelector("div").classList.remove("scale-100", "opacity-100");
+                modal.querySelector("div").classList.add("scale-95", "opacity-0");
+
+                setTimeout(() => {
+                    modal.classList.add("hidden");
+                    modal.classList.remove("flex");
+                }, 200);
+            }
+
+            // Close on escape
+            window.addEventListener("keydown", (e) => {
+                if (e.key === "Escape") closeMessageModal();
+            });
+        </script>
+    </body>
+</html>
