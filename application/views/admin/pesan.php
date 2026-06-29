@@ -1,7 +1,7 @@
 
 	
 		<!-- Main Content -->
-		<main class="ml-64 pt-16 min-h-screen bg-surface">
+		<main class="pt-16 min-h-screen bg-surface">
 			<div class="p-md max-w-max-width mx-auto">
 				<!-- Breadcrumbs & Stats -->
 				<div

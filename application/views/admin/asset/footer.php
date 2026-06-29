@@ -108,6 +108,25 @@
 					}
 				});
 			});
+
+			// berita form
+			// Simple Interaction: Date Picker Default to Today
+			window.addEventListener("DOMContentLoaded", () => {
+				const dateInput = document.getElementById("tanggal");
+				if (dateInput) {
+					const today = new Date().toISOString().split("T")[0];
+					dateInput.value = today;
+				}
+			});
+
+			// Toggle effects for buttons
+			document.querySelectorAll("button").forEach((btn) => {
+				btn.addEventListener("mousedown", () => btn.classList.add("scale-95"));
+				btn.addEventListener("mouseup", () => btn.classList.remove("scale-95"));
+				btn.addEventListener("mouseleave", () =>
+					btn.classList.remove("scale-95"),
+				);
+			});
 		</script>
 	</body>
 </html>

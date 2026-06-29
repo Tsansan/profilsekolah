@@ -15,7 +15,7 @@
 				</div>
 				<button
 					class="flex items-center gap-2 bg-primary text-on-primary px-6 py-3 rounded-xl font-label-md hover:shadow-lg active:scale-95 transition-all"
-				>
+				onclick="window.location.href='<?= base_url('admin/berita_form') ?>'">
 					<span class="material-symbols-outlined">add</span>
 					Tambah Berita Baru
 				</button>
@@ -91,7 +91,7 @@
 						</select>
 					</div>
 					<div class="text-on-surface-variant text-sm">
-						Menampilkan 1 - 10 dari 128 berita
+						Menampilkan 1 - 10 dari <?= isset($total_berita) ? $total_berita : 0 ?> berita
 					</div>
 				</div>
 				<div class="overflow-x-auto">
@@ -109,6 +109,7 @@
 						</thead>
 						<tbody class="divide-y divide-outline-variant">
 							<!-- Row 1 -->
+							 <?php foreach ($berita_list as $berita): ?>
 							<tr
 								class="hover:bg-surface-container-low transition-colors group"
 							>
@@ -120,20 +121,19 @@
 											<img
 												class="w-full h-full object-cover"
 												data-alt="A detailed cinematic shot of a school graduation ceremony with a focus on a student's graduation cap against a blurred backdrop of cheering peers and blue and white banners. The lighting is warm and celebratory, highlighting the texture of the fabric. The overall mood is inspirational and prestigious, following the institutional blue color palette."
-												src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3vZ6qbFBIHx56BJOeNkgT9yBxbvjP3tqlePU38Vyh1zGYnv7DZGrr_M-sINJgxaqqqJ_fjO6YnuEC4-4S5BvbDlpIzK5F6i61xgTq_g7P1Ds1IvLWcUMmT2W7n2r3cXxazBsaeXgCaKqF4tQzD1AQi0XBQEXX7S89_tti7_wAmAYN4Y5nRPrJh-mOwv3lhT4BT3MM456Y-hCclE2J4htV-PFCTKP3COKluxr1igzPMqJ-gX4OnX2AtsAhQOF7TAJyqn0uuaV9-Q"
+												src="<?= base_url('assets/img/berita/' . $berita->gambar) ?>"
 											/>
 										</div>
 										<div class="max-w-xs xl:max-w-md">
 											<div
 												class="font-semibold text-on-surface group-hover:text-primary transition-colors truncate"
 											>
-												Penerimaan Siswa Baru Tahun Ajaran 2024/2025
+												<?= $berita->judul ?>
 											</div>
 											<div
 												class="text-caption text-on-surface-variant line-clamp-1"
 											>
-												Prosedur dan jadwal lengkap pendaftaran calon siswa
-												baru...
+												<?= $berita->isiberita ?>
 											</div>
 										</div>
 									</div>
@@ -141,22 +141,22 @@
 								<td class="px-md py-4">
 									<span
 										class="bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-full text-xs font-semibold"
-										>Pengumuman</span
+										><?= $berita->kategori ?></span
 									>
 								</td>
-								<td class="px-md py-4 text-on-surface-variant">12 Mei 2024</td>
+								<td class="px-md py-4 text-on-surface-variant"><?= $berita->tanggal ?></td>
 								<td class="px-md py-4">
 									<div
 										class="flex items-center gap-1.5 text-green-600 font-semibold text-sm"
 									>
 										<span class="w-2 h-2 rounded-full bg-green-500"></span>
-										Published
+										<?= $berita->status ?>
 									</div>
 								</td>
 								<td class="px-md py-4 text-right">
 									<div class="flex justify-end gap-2">
 										<button
-											class="p-2 hover:bg-primary-container hover:text-on-primary-container rounded-lg transition-all text-on-surface-variant"
+											class="p-2 hover:bg-primary-container hover:text-on-primary-container rounded-lg transition-all text-on-surface-variant" onclick="window.location.href='<?= base_url('admin/berita_form?id=' . $berita->id) ?>'">
 										>
 											<span class="material-symbols-outlined text-[20px]"
 												>edit</span
@@ -172,198 +172,7 @@
 									</div>
 								</td>
 							</tr>
-							<!-- Row 2 -->
-							<tr
-								class="hover:bg-surface-container-low transition-colors group"
-							>
-								<td class="px-md py-4">
-									<div class="flex items-center gap-3">
-										<div
-											class="w-12 h-12 rounded bg-surface-container-highest flex-shrink-0 overflow-hidden border border-outline-variant"
-										>
-											<img
-												class="w-full h-full object-cover"
-												data-alt="A professional studio photo of modern science lab equipment, including a microscope and glass beakers filled with vibrant blue liquid. The background is a clean, white laboratory setting with soft diffuse lighting. The aesthetic is modern, scientific, and educational, emphasizing academic excellence and high-tech school facilities."
-												src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHObq9aLvMdKL4WDh72aN0xjwONPCkdZNSUETUBgSA9FurxmtpIg42dXm8CMaUTI_lo0WhZ-eHZzADzqyMgMllP1i6Z3GoNxCC5k_4LlOUiVOTMAau8HzQ_Bs6HGFJg7ae_bprJr-I7URfUWqb_J0HMln6e7WrbKw4VvwR3gTmp3CrZaTNgiCWCRclsAtqV2BpZgxCaP1QWCpkryUvsrDlxkwNrptJARtdJnHe4808y3cq4tdyuli5Rw1VPQNeMy7kL4Z1drHVfQ"
-											/>
-										</div>
-										<div class="max-w-xs xl:max-w-md">
-											<div
-												class="font-semibold text-on-surface group-hover:text-primary transition-colors truncate"
-											>
-												Kunjungan Industri ke Balai Penelitian Padi
-											</div>
-											<div
-												class="text-caption text-on-surface-variant line-clamp-1"
-											>
-												Siswa kelas 8 melakukan observasi langsung di
-												lapangan...
-											</div>
-										</div>
-									</div>
-								</td>
-								<td class="px-md py-4">
-									<span
-										class="bg-surface-variant text-on-surface-variant px-3 py-1 rounded-full text-xs font-semibold"
-										>Akademik</span
-									>
-								</td>
-								<td class="px-md py-4 text-on-surface-variant">10 Mei 2024</td>
-								<td class="px-md py-4">
-									<div
-										class="flex items-center gap-1.5 text-amber-600 font-semibold text-sm"
-									>
-										<span class="w-2 h-2 rounded-full bg-amber-500"></span>
-										Draft
-									</div>
-								</td>
-								<td class="px-md py-4 text-right">
-									<div class="flex justify-end gap-2">
-										<button
-											class="p-2 hover:bg-primary-container hover:text-on-primary-container rounded-lg transition-all text-on-surface-variant"
-										>
-											<span class="material-symbols-outlined text-[20px]"
-												>edit</span
-											>
-										</button>
-										<button
-											class="p-2 hover:bg-error-container hover:text-on-error-container rounded-lg transition-all text-on-surface-variant"
-										>
-											<span class="material-symbols-outlined text-[20px]"
-												>delete</span
-											>
-										</button>
-									</div>
-								</td>
-							</tr>
-							<!-- Row 3 -->
-							<tr
-								class="hover:bg-surface-container-low transition-colors group"
-							>
-								<td class="px-md py-4">
-									<div class="flex items-center gap-3">
-										<div
-											class="w-12 h-12 rounded bg-surface-container-highest flex-shrink-0 overflow-hidden border border-outline-variant"
-										>
-											<img
-												class="w-full h-full object-cover"
-												data-alt="A dynamic shot of a student basketball team huddling together on a polished wooden court, illuminated by dramatic overhead gym lighting. The scene is filled with energy and teamwork, capturing the spirit of Indonesian youth sports. The composition is professional and vibrant, emphasizing community and school pride."
-												src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9f5sI0v1pcClD6aKZ0MIolGffIk8ciQfkpeknY7D-C0lbL13bQ2dPH2tqOdpmd-IXqwpqwosh_wi4zrQtBHf60l9OBAeRXDhFlS_71XaTQtH3YvHK-RcD9p3tRcKSvUwndTZE6Rl0UXNC7OrIqi2pBCnF5-201Cyf2xdzNjTO8Gmb0s04Ae88bNZQx_Iw5EjwvlxFg10o6HQ-CUUsfBzbh7CTh75n2lw-sZ3o41RHw9nYR--akCZQpBRaKo9CXM-M_2xtA2AFtg"
-											/>
-										</div>
-										<div class="max-w-xs xl:max-w-md">
-											<div
-												class="font-semibold text-on-surface group-hover:text-primary transition-colors truncate"
-											>
-												Juara 1 Turnamen Basket Antar SMP Sekabupaten
-											</div>
-											<div
-												class="text-caption text-on-surface-variant line-clamp-1"
-											>
-												Tim basket sekolah berhasil membawa pulang piala
-												bergilir...
-											</div>
-										</div>
-									</div>
-								</td>
-								<td class="px-md py-4">
-									<span
-										class="bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-full text-xs font-semibold"
-										>Prestasi</span
-									>
-								</td>
-								<td class="px-md py-4 text-on-surface-variant">08 Mei 2024</td>
-								<td class="px-md py-4">
-									<div
-										class="flex items-center gap-1.5 text-green-600 font-semibold text-sm"
-									>
-										<span class="w-2 h-2 rounded-full bg-green-500"></span>
-										Published
-									</div>
-								</td>
-								<td class="px-md py-4 text-right">
-									<div class="flex justify-end gap-2">
-										<button
-											class="p-2 hover:bg-primary-container hover:text-on-primary-container rounded-lg transition-all text-on-surface-variant"
-										>
-											<span class="material-symbols-outlined text-[20px]"
-												>edit</span
-											>
-										</button>
-										<button
-											class="p-2 hover:bg-error-container hover:text-on-error-container rounded-lg transition-all text-on-surface-variant"
-										>
-											<span class="material-symbols-outlined text-[20px]"
-												>delete</span
-											>
-										</button>
-									</div>
-								</td>
-							</tr>
-							<!-- Row 4 -->
-							<tr
-								class="hover:bg-surface-container-low transition-colors group"
-							>
-								<td class="px-md py-4">
-									<div class="flex items-center gap-3">
-										<div
-											class="w-12 h-12 rounded bg-surface-container-highest flex-shrink-0 overflow-hidden border border-outline-variant"
-										>
-											<img
-												class="w-full h-full object-cover"
-												data-alt="A group of students wearing traditional Indonesian uniforms sitting in a modern, sun-drenched library with high ceilings and bookshelves. The image focuses on a collaborative group study session, with open laptops and notebooks. The mood is studious yet warm, with soft light streaming through large windows, symbolizing a bright academic future."
-												src="https://lh3.googleusercontent.com/aida-public/AB6AXuBA2S7F1nrNOGdBDPtEXdp235xUTHp5VNTt6P-3Scf3jEaaiTPWYAlaaPkOU-3XHiPqkdCPd9oZefutJwZwn-HK6vd2c_0ChvKquxAxnf7yYm5DegpgugTgz224nuDN4eZ9QCXniFxpkESTuIX13bSAuEdLgkZywX3lf6wL5TKmywxPrC1LRPfVlVjhkL1GzOApnQ3ef3apJhZHw2f0Uugcr4PdNtkcgiwRW8c8l3wskbX8bUjy---loLH7bjdQ7Xyu8Tz5piMnWQ"
-											/>
-										</div>
-										<div class="max-w-xs xl:max-w-md">
-											<div
-												class="font-semibold text-on-surface group-hover:text-primary transition-colors truncate"
-											>
-												Tips Menghadapi Ujian Akhir Semester dengan Tenang
-											</div>
-											<div
-												class="text-caption text-on-surface-variant line-clamp-1"
-											>
-												Beberapa tips praktis bagi siswa untuk mengelola
-												stres...
-											</div>
-										</div>
-									</div>
-								</td>
-								<td class="px-md py-4">
-									<span
-										class="bg-surface-variant text-on-surface-variant px-3 py-1 rounded-full text-xs font-semibold"
-										>Tips &amp; Trik</span
-									>
-								</td>
-								<td class="px-md py-4 text-on-surface-variant">05 Mei 2024</td>
-								<td class="px-md py-4">
-									<div
-										class="flex items-center gap-1.5 text-green-600 font-semibold text-sm"
-									>
-										<span class="w-2 h-2 rounded-full bg-green-500"></span>
-										Published
-									</div>
-								</td>
-								<td class="px-md py-4 text-right">
-									<div class="flex justify-end gap-2">
-										<button
-											class="p-2 hover:bg-primary-container hover:text-on-primary-container rounded-lg transition-all text-on-surface-variant"
-										>
-											<span class="material-symbols-outlined text-[20px]"
-												>edit</span
-											>
-										</button>
-										<button
-											class="p-2 hover:bg-error-container hover:text-on-error-container rounded-lg transition-all text-on-surface-variant"
-										>
-											<span class="material-symbols-outlined text-[20px]"
-												>delete</span
-											>
-										</button>
-									</div>
-								</td>
-							</tr>
+							<?php endforeach; ?>
 						</tbody>
 					</table>
 				</div>
