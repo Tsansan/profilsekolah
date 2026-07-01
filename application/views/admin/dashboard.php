@@ -1,278 +1,3 @@
-<!-- <!doctype html>
-<html class="light" lang="id">
-	<head>
-		<meta charset="utf-8" />
-		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
-		<title>Dashboard Admin | SMPN 2 Sidoharjo</title>
-		<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-		<link
-			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-			rel="stylesheet"
-		/>
-		<link
-			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-			rel="stylesheet"
-		/>
-		<link
-			href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Montserrat:wght@100..900&amp;display=swap"
-			rel="stylesheet"
-		/>
-		<script id="tailwind-config">
-			tailwind.config = {
-				darkMode: "class",
-				theme: {
-					extend: {
-						colors: {
-							secondary: "#006591",
-							"on-secondary": "#ffffff",
-							"on-primary-fixed": "#001453",
-							"inverse-on-surface": "#eaf1ff",
-							"on-secondary-container": "#004666",
-							primary: "#00288e",
-							"on-secondary-fixed": "#001e2f",
-							"primary-container": "#1e40af",
-							surface: "#f8f9ff",
-							"on-secondary-fixed-variant": "#004c6e",
-							"outline-variant": "#c4c5d5",
-							"error-container": "#ffdad6",
-							"secondary-fixed": "#c9e6ff",
-							"secondary-fixed-dim": "#89ceff",
-							"on-tertiary-container": "#ffa929",
-							"surface-container-low": "#eff4ff",
-							"on-background": "#0b1c30",
-							"surface-dim": "#cbdbf5",
-							"tertiary-container": "#6b4200",
-							error: "#ba1a1a",
-							"surface-variant": "#d3e4fe",
-							"on-tertiary-fixed": "#2a1700",
-							"surface-container-high": "#dce9ff",
-							"surface-bright": "#f8f9ff",
-							"on-primary-fixed-variant": "#173bab",
-							"inverse-surface": "#213145",
-							"on-surface": "#0b1c30",
-							background: "#f8f9ff",
-							tertiary: "#4c2e00",
-							"surface-container-highest": "#d3e4fe",
-							"on-tertiary-fixed-variant": "#653e00",
-							"primary-fixed": "#dde1ff",
-							"secondary-container": "#39b8fd",
-							"tertiary-fixed-dim": "#ffb95f",
-							"surface-container": "#e5eeff",
-							"primary-fixed-dim": "#b8c4ff",
-							"on-error": "#ffffff",
-							"surface-tint": "#3755c3",
-							"on-primary": "#ffffff",
-							"on-error-container": "#93000a",
-							"inverse-primary": "#b8c4ff",
-							"tertiary-fixed": "#ffddb8",
-							"on-tertiary": "#ffffff",
-							"surface-container-lowest": "#ffffff",
-							outline: "#757684",
-							"on-surface-variant": "#444653",
-							"on-primary-container": "#a8b8ff",
-						},
-						borderRadius: {
-							DEFAULT: "0.125rem",
-							lg: "0.25rem",
-							xl: "0.5rem",
-							full: "0.75rem",
-						},
-						spacing: {
-							xs: "8px",
-							base: "4px",
-							xl: "80px",
-							lg: "48px",
-							"margin-desktop": "auto",
-							gutter: "24px",
-							md: "24px",
-							sm: "16px",
-							"margin-mobile": "16px",
-							"max-width": "1280px",
-						},
-						fontFamily: {
-							"headline-lg-mobile": ["Montserrat"],
-							caption: ["Inter"],
-							"headline-lg": ["Montserrat"],
-							"body-md": ["Inter"],
-							"body-lg": ["Inter"],
-							"display-lg": ["Montserrat"],
-							"label-md": ["Inter"],
-							"headline-md": ["Montserrat"],
-						},
-						fontSize: {
-							"headline-lg-mobile": [
-								"24px",
-								{ lineHeight: "32px", fontWeight: "700" },
-							],
-							caption: ["12px", { lineHeight: "16px", fontWeight: "400" }],
-							"headline-lg": [
-								"32px",
-								{ lineHeight: "40px", fontWeight: "700" },
-							],
-							"body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
-							"body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
-							"display-lg": [
-								"48px",
-								{
-									lineHeight: "56px",
-									letterSpacing: "-0.02em",
-									fontWeight: "700",
-								},
-							],
-							"label-md": [
-								"14px",
-								{
-									lineHeight: "20px",
-									letterSpacing: "0.01em",
-									fontWeight: "600",
-								},
-							],
-							"headline-md": [
-								"24px",
-								{ lineHeight: "32px", fontWeight: "600" },
-							],
-						},
-					},
-				},
-			};
-		</script>
-		<style>
-			.material-symbols-outlined {
-				font-variation-settings:
-					"FILL" 0,
-					"wght" 400,
-					"GRAD" 0,
-					"opsz" 24;
-			}
-			::-webkit-scrollbar {
-				width: 8px;
-			}
-			::-webkit-scrollbar-track {
-				background: #f1f1f1;
-			}
-			::-webkit-scrollbar-thumb {
-				background: #00288e;
-				border-radius: 4px;
-			}
-		</style>
-	</head>
-	<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
-		SideNavBar Shell
-		<aside
-			class="h-screen w-64 fixed left-0 top-0 bg-primary dark:bg-inverse-surface shadow-md flex flex-col p-sm z-50"
-		>
-			<div class="flex flex-col items-center mb-lg px-xs">
-				<div
-					class="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-base shadow-lg overflow-hidden border-2 border-on-primary-container"
-				>
-					<img
-						alt="Logo SMP Negeri 2 Sidoharjo"
-						class="w-12 h-12"
-						src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfd30H1Kaqk0UNq3Ky7p_7LixLZMiLkjNAqwr8JTbrk9XZi7pBgKYdHumRiyf-ao7xYI2ByoMxYPVqsZNit3Z77o7gbKk6x1jVn9oGApIR8M6eeasFcaWBabb7VJRymw7qKNUPhXaVvQ5SDUtlLZjx_DxAb3Ge48niYGJ5JbQIF_vzUVET3e2NnwbIIvzY_0y8wWai7C3RhJQxgHDn9_UTfFXkp38b5S4S7h0GLCKVpC7SUSZKN7u0oR-f5WcQEuJ7gGJtd6t0ag"
-					/>
-				</div>
-				<h1
-					class="text-headline-md font-headline-md text-on-primary text-center leading-tight"
-				>
-					SMPN 2 Sidoharjo
-				</h1>
-				<p class="font-label-md text-label-md text-on-primary opacity-80">
-					Admin Panel
-				</p>
-			</div>
-			<nav class="flex-1 space-y-base overflow-y-auto">
-				<a
-					class="flex items-center gap-3 px-4 py-3 bg-secondary-container text-on-secondary-container rounded-lg cursor-pointer transition-all active:scale-95 font-label-md text-label-md"
-					href="#"
-				>
-					<span
-						class="material-symbols-outlined"
-						style="font-variation-settings: &quot;FILL&quot; 1"
-						>dashboard</span
-					>
-					<span class="">Dashboard</span>
-				</a>
-				<a
-					class="flex items-center gap-3 px-4 py-3 text-on-primary opacity-80 hover:bg-primary-container hover:opacity-100 transition-colors cursor-pointer transition-all active:scale-95 font-label-md text-label-md"
-					href="#"
-				>
-					<span class="material-symbols-outlined">newspaper</span>
-					<span class="">Berita</span>
-				</a>
-				<a
-					class="flex items-center gap-3 px-4 py-3 text-on-primary opacity-80 hover:bg-primary-container hover:opacity-100 transition-colors cursor-pointer transition-all active:scale-95 font-label-md text-label-md"
-					href="#"
-					><span class="material-symbols-outlined">school</span
-					><span class="">Profil</span></a
-				>
-
-				<a
-					class="flex items-center gap-3 px-4 py-3 text-on-primary opacity-80 hover:bg-primary-container hover:opacity-100 transition-colors cursor-pointer transition-all active:scale-95 font-label-md text-label-md"
-					href="#"
-					><span class="material-symbols-outlined">mail</span
-					><span class="">Pesan Masuk</span></a
-				>
-			</nav>
-			<div class="mt-auto border-t border-white/10 pt-sm">
-				<div
-					class="flex items-center gap-3 px-4 py-3 text-on-primary opacity-80"
-				>
-					<img
-						alt="Admin Avatar"
-						class="w-8 h-8 rounded-full border border-on-primary"
-						src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLEwTJnNB24T7YQw_9XaIc1nS-_Je89o5ac6305AnrAQLFVXwYaPDt8pwYRWHTYvtazZu4GB3RiYGk00EHumGYC60I7w6rjtutDhn47jtQwDtI1-WZPwa1vQPoBS3SNFLcRhkln7nBuh95c27KFO3br940L62QvBURaxAdhBsBLgAeqs1gv_PC984sQ7QT-7oCLEH1A8xmEjShTk3W81bFJb0tEemBU8HJ36t1tgvYx6Vllus6N2jaasXxof8pI7w_kJZ7FYaVXw"
-					/>
-					<div class="overflow-hidden">
-						<p class="font-label-md truncate">Admin Utama</p>
-						<p class="text-[10px] opacity-60">Superadmin</p>
-					</div>
-				</div>
-			</div>
-		</aside>
-		TopNavBar Shell
-		<header
-			class="h-16 fixed top-0 right-0 left-64 bg-surface dark:bg-background border-b border-outline-variant flex justify-between items-center px-md z-40"
-		>
-			<div class="flex items-center gap-md">
-				<h2 class="font-headline-md text-headline-md text-on-surface">
-					Dashboard
-				</h2>
-				<div class="relative w-80">
-					<span
-						class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline"
-						>search</span
-					>
-					<input
-						class="w-full bg-surface-container-low border-none rounded-full pl-10 pr-4 py-2 text-label-md focus:ring-2 focus:ring-primary transition-all"
-						placeholder="Cari laporan, pesan, berita..."
-						type="text"
-					/>
-				</div>
-			</div>
-			<div class="flex items-center gap-sm">
-				<button
-					class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-surface-variant transition-colors text-on-surface-variant cursor-pointer"
-				>
-					<span class="material-symbols-outlined">notifications</span>
-				</button>
-				<button
-					class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-surface-variant transition-colors text-on-surface-variant cursor-pointer"
-				>
-					<span class="material-symbols-outlined">help</span>
-				</button>
-				<div class="h-8 w-px bg-outline-variant mx-xs"></div>
-				<div
-					class="flex items-center gap-3 hover:bg-surface-variant p-2 rounded-lg transition-colors cursor-pointer"
-				>
-					<span class="font-label-md text-on-surface">Admin Utama</span>
-					<img
-						alt="Admin Avatar"
-						class="w-8 h-8 rounded-full"
-						src="https://lh3.googleusercontent.com/aida-public/AB6AXuCT9ufkldufQPYIIXdAurA9x3F7W6Lkyw8MXbKjouqppoEMciPj0eGsSS7Y_s6YMIVpEA2W_5ol_ad_sXb7UWnrnVXT9yTPW5h2XLTy-97ddB4W2DjT1-UfGejWyubH9h4IeM44Rdwi3QFdABSbcvz-g936_dRG14F0B05Bs4TSNv96h_vRuScXp_wVXsN-1LilvrnFXuODuLPiAUgNKp5S01knkrCRc-6lhPGkssjYJi5M6TJH78UUSk4DOzzm3ugBPvdjC4xyfQ"
-					/>
-				</div>
-			</div>
-		</header> -->
 		<!-- Main Content Canvas -->
 		<main class="ml-64 mt-16 p-md min-h-[calc(100vh-64px)] bg-surface">
 			<!-- Animated Header Background -->
@@ -302,7 +27,7 @@
 							<p class="text-on-surface-variant font-label-md mb-base">
 								Total Postingan Berita
 							</p>
-							<h4 class="text-display-lg font-display-lg text-primary">124</h4>
+							<h4 class="text-display-lg font-display-lg text-primary"><?php echo $total_berita; ?></h4>
 							<p
 								class="text-green-600 font-label-md flex items-center gap-1 mt-base"
 							>
@@ -383,7 +108,7 @@
 							Aktivitas Terkini Berita
 						</h5>
 						<button
-							class="bg-primary text-white px-4 py-2 rounded-full font-label-md hover:bg-primary-container transition-colors flex items-center gap-2"
+							class="bg-primary text-white px-4 py-2 rounded-full font-label-md hover:bg-primary-container transition-colors flex items-center gap-2" onclick="window.location.href='<?= base_url('admin/berita_form') ?>'"
 						>
 							<span class="material-symbols-outlined text-[20px]">add</span>
 							Berita Baru
@@ -403,6 +128,7 @@
 								</tr>
 							</thead>
 							<tbody class="text-body-md divide-y divide-outline-variant">
+								<?php foreach ($berita as $item): ?>
 								<tr
 									class="hover:bg-surface-container-low transition-colors group"
 								>
@@ -419,151 +145,48 @@
 												/>
 											</div>
 											<span class="font-medium text-on-surface line-clamp-1"
-												>Penerimaan Siswa Baru TA 2024/2025</span
+												><?= $item->judul ?></span
 											>
 										</div>
 									</td>
 									<td class="px-md py-4">
 										<span
 											class="bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-full text-caption"
-											>Akademik</span
+											><?= $item->kategori ?></span
 										>
 									</td>
 									<td class="px-md py-4 text-on-surface-variant">
-										24 Mei 2024
+										<?= $item->tanggal ?>
 									</td>
 									<td class="px-md py-4">
 										<span
 											class="inline-flex items-center gap-1 text-green-600 font-label-md"
 										>
 											<span class="w-2 h-2 rounded-full bg-green-600"></span>
-											Published
+											<?= ucfirst($item->status) ?>
 										</span>
 									</td>
 									<td class="px-md py-4">
 										<div class="flex justify-center gap-2">
 											<button
-												class="p-2 hover:bg-surface-variant rounded-full text-primary"
+												class="p-2 hover:bg-surface-variant rounded-full text-primary" onclick="window.location.href='<?= base_url('admin/berita_form?id=' . $item->idberita) ?>'"
 											>
 												<span class="material-symbols-outlined">edit</span>
 											</button>
 											<button
-												class="p-2 hover:bg-surface-variant rounded-full text-error"
+												class="p-2 hover:bg-surface-variant rounded-full text-error" onclick="openDeleteModal(<?= $item->idberita ?>, '<?= addslashes($item->judul) ?>')"
 											>
 												<span class="material-symbols-outlined">delete</span>
 											</button>
 										</div>
 									</td>
 								</tr>
-								<tr
-									class="hover:bg-surface-container-low transition-colors group"
-								>
-									<td class="px-md py-4">
-										<div class="flex items-center gap-3">
-											<div
-												class="w-10 h-10 rounded-lg overflow-hidden shrink-0"
-											>
-												<img
-													alt="News Image"
-													class="w-full h-full object-cover"
-													data-alt="A vibrant and crisp image showing various high-quality sports equipment like a soccer ball and basketball arranged neatly on a polished wooden gymnasium floor. Warm sunlight streams through large high-set windows, creating long shadows and a sense of energy and institutional pride. The image focuses on cleanliness and modern educational facilities, maintaining a professional academic atmosphere."
-													src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbYBJF_CU1LLIHsDAsmBcr_u7y0__JeyOPD9R5OGIsEX2VoQIaSobu5XhmjtXVoC6Ot7_wkKFLe_f5pdnqbJYWRcaBYYh5QnGf7NJvnVc222no2VwsJCXySRKvLShnGZYljylCsApyCkvyDGTflhChK9XSnnYzEOjrA5C6-BPJzFBiXm0mQ4SmKWQJO1eGqatgHqWvDrllsgsaqskVwDo0fdpwtESI2zOF24fp27_LDNtOKGUOx6ghMPC6o5bwkhsApKvSKdu3-Q"
-												/>
-											</div>
-											<span class="font-medium text-on-surface line-clamp-1"
-												>Juara 1 Lomba Basket Tingkat Provinsi</span
-											>
-										</div>
-									</td>
-									<td class="px-md py-4">
-										<span
-											class="bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1 rounded-full text-caption"
-											>Prestasi</span
-										>
-									</td>
-									<td class="px-md py-4 text-on-surface-variant">
-										22 Mei 2024
-									</td>
-									<td class="px-md py-4">
-										<span
-											class="inline-flex items-center gap-1 text-green-600 font-label-md"
-										>
-											<span class="w-2 h-2 rounded-full bg-green-600"></span>
-											Published
-										</span>
-									</td>
-									<td class="px-md py-4">
-										<div class="flex justify-center gap-2">
-											<button
-												class="p-2 hover:bg-surface-variant rounded-full text-primary"
-											>
-												<span class="material-symbols-outlined">edit</span>
-											</button>
-											<button
-												class="p-2 hover:bg-surface-variant rounded-full text-error"
-											>
-												<span class="material-symbols-outlined">delete</span>
-											</button>
-										</div>
-									</td>
-								</tr>
-								<tr
-									class="hover:bg-surface-container-low transition-colors group"
-								>
-									<td class="px-md py-4">
-										<div class="flex items-center gap-3">
-											<div
-												class="w-10 h-10 rounded-lg overflow-hidden shrink-0"
-											>
-												<img
-													alt="News Image"
-													class="w-full h-full object-cover"
-													data-alt="A detailed, close-up shot of a modern computer laboratory inside a school, with sleek desktop monitors displaying educational coding software. The room is designed with minimalist aesthetics, featuring white walls and blue accent chairs. The lighting is bright and uniform, reflecting a high-tech and trustworthy learning environment consistent with prestigious academic branding."
-													src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVSNw0EGWoE6kV6BHgnvpl8aq0ZfAqejbgYHhuzCidYavKYbMjKwm8y28ie_qUieMPgFLkkAuQEG_fj5ymeK3CHjjNVCV4L9fGt5QfVahhAws4T2k3n3d7ZcO_XcGREbW2z3RmJ382jqaCdyXP_kt4DRjqgir6gamm_YU2MiUM2XHdG2uDTDbtCLyEm8VIsa0l3LOfj4-mM7R1E9pgtEM_Z_FY_zhfRPm_dUzhcM9dK5vK7NthJlYIbnm0ajRZ-nkTFnnSRv4r5g"
-												/>
-											</div>
-											<span class="font-medium text-on-surface line-clamp-1"
-												>Pembaruan Fasilitas Lab Komputer</span
-											>
-										</div>
-									</td>
-									<td class="px-md py-4">
-										<span
-											class="bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-full text-caption"
-											>Fasilitas</span
-										>
-									</td>
-									<td class="px-md py-4 text-on-surface-variant">
-										20 Mei 2024
-									</td>
-									<td class="px-md py-4">
-										<span
-											class="inline-flex items-center gap-1 text-on-surface-variant font-label-md"
-										>
-											<span class="w-2 h-2 rounded-full bg-outline"></span>
-											Draft
-										</span>
-									</td>
-									<td class="px-md py-4">
-										<div class="flex justify-center gap-2">
-											<button
-												class="p-2 hover:bg-surface-variant rounded-full text-primary"
-											>
-												<span class="material-symbols-outlined">edit</span>
-											</button>
-											<button
-												class="p-2 hover:bg-surface-variant rounded-full text-error"
-											>
-												<span class="material-symbols-outlined">delete</span>
-											</button>
-										</div>
-									</td>
-								</tr>
+								<?php endforeach; ?>
 							</tbody>
 						</table>
 					</div>
 					<div class="p-md border-t border-outline-variant flex justify-center">
-						<button class="text-primary font-label-md hover:underline">
+						<button class="text-primary font-label-md hover:underline" onclick="window.location.href='<?= base_url('admin/berita') ?>'">
 							Lihat Semua Berita
 						</button>
 					</div>
@@ -692,6 +315,76 @@
 				</section>
 			</div>
 		</main>
+
+		<!-- Delete Confirmation Modal -->
+		<div id="deleteModal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50">
+			<div class="bg-white rounded-2xl shadow-xl max-w-sm w-full mx-4 p-lg">
+				<div class="flex items-center gap-3 mb-md">
+					<div class="w-12 h-12 bg-error-container rounded-full flex items-center justify-center">
+						<span class="material-symbols-outlined text-error text-[24px]">warning</span>
+					</div>
+					<h3 class="font-headline-md text-headline-md text-on-surface">Hapus Berita?</h3>
+				</div>
+				<p class="text-on-surface-variant mb-lg">
+					Apakah Anda yakin ingin menghapus berita "<span id="beritaTitle" class="font-semibold text-error"></span>"? Tindakan ini tidak dapat dibatalkan.
+				</p>
+				<div class="flex gap-3 justify-end">
+					<button class="px-6 py-3 text-on-surface font-label-md border border-outline-variant rounded-xl hover:bg-surface-container-low transition-colors" onclick="closeDeleteModal()">
+						Batal
+					</button>
+					<button class="px-6 py-3 bg-error text-on-error font-label-md rounded-xl hover:bg-error/80 transition-colors" onclick="confirmDelete()">
+						Hapus
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			const baseUrl = '<?= base_url() ?>';
+			const adminUrl = '<?= base_url("admin") ?>';
+			let deleteBeritaId = null;
+
+			function openDeleteModal(id, judul) {
+				deleteBeritaId = id;
+				document.getElementById('beritaTitle').textContent = judul;
+				document.getElementById('deleteModal').classList.remove('hidden');
+				document.getElementById('deleteModal').classList.add('flex');
+			}
+
+			function closeDeleteModal() {
+				document.getElementById('deleteModal').classList.add('hidden');
+				document.getElementById('deleteModal').classList.remove('flex');
+				deleteBeritaId = null;
+			}
+
+			function confirmDelete() {
+				if (!deleteBeritaId) return;
+
+				fetch(`${adminUrl}/delete_berita`, {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/x-www-form-urlencoded',
+					},
+					body: 'id=' + deleteBeritaId
+				})
+				.then(response => response.json())
+				.then(data => {
+					closeDeleteModal();
+					if (data.status === 'success') {
+						alert('Berita berhasil dihapus');
+						// Reload page to see updated list
+						location.reload();
+					} else {
+						alert('Gagal menghapus berita: ' + (data.message || 'Error'));
+					}
+				})
+				.catch(error => {
+					console.error('Error:', error);
+					alert('Terjadi kesalahan saat menghapus berita');
+					closeDeleteModal();
+				});
+			}
+		</script>
 		<!-- <script>
 			// Micro-interaction for hover effects on table rows
 			document.querySelectorAll("tr").forEach((row) => {

@@ -1,6 +1,6 @@
 
 		<!-- Main Content Canvas -->
-		<main class="pt-16 min-h-screen p-md">
+		<main class="pt-24 min-h-screen p-md">
 			<div class="max-w-5xl mx-auto space-y-md">
 				<!-- Breadcrumbs -->
 				<nav

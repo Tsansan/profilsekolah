@@ -8,13 +8,13 @@ s		<!-- Main Content Wrapper -->
 				>
 					<a
 						class="hover:text-primary transition-colors flex items-center gap-1"
-						href="#"
+						href="<?= base_url('admin') ?>"
 					>
 						<span class="material-symbols-outlined text-sm">dashboard</span>
 						Dashboard
 					</a>
 					<span class="material-symbols-outlined text-sm">chevron_right</span>
-					<a class="hover:text-primary transition-colors" href="#">Berita</a>
+					<a class="hover:text-primary transition-colors" href="<?= base_url('admin/berita') ?>">Berita</a>
 					<span class="material-symbols-outlined text-sm">chevron_right</span>
 					<span class="text-primary font-bold">Tambah Berita Baru</span>
 				</nav>
@@ -42,7 +42,10 @@ s		<!-- Main Content Wrapper -->
 					</div>
 					<div class="flex gap-3">
 						<button
-							type="button"
+							type="submit"
+							form="beritaForm"
+							name="status"
+							value="draft"
 							class="px-6 py-2.5 border-2 border-primary text-primary font-label-md text-label-md rounded-xl hover:bg-primary-fixed transition-all active:scale-95"
 						>
 							Simpan sebagai Draft
@@ -50,6 +53,8 @@ s		<!-- Main Content Wrapper -->
 						<button
 							type="submit"
 							form="beritaForm"
+							name="status"
+							value="published"
 							class="px-6 py-2.5 bg-primary text-white font-label-md text-label-md rounded-xl hover:bg-primary-fixed-variant transition-all active:scale-95 flex items-center gap-2 shadow-lg shadow-primary/10"
 						>
 							<span class="material-symbols-outlined text-sm">send</span>
@@ -74,6 +79,7 @@ s		<!-- Main Content Wrapper -->
 								Informasi Utama
 							</h3>
 							<div class="space-y-6">
+								<input type="hidden" name="idberita" value="<?= $this->session->flashdata('idberita') ?>" />
 								<div>
 									<label
 										class="block font-label-md text-label-md text-on-surface-variant mb-2"
@@ -84,7 +90,8 @@ s		<!-- Main Content Wrapper -->
 										class="w-full bg-white border-outline-variant rounded-xl px-4 py-3 focus:ring-primary focus:border-primary transition-all text-body-md placeholder:text-outline/50"
 												id="judul"
 												name="judul"
-												placeholder="Masukkan judul yang menarik..."
+												placeholder="Masukkan judul berita di sini..."
+												value="<?= $this->session->flashdata('judul') ?>"
 										type="text"
 									/>
 								</div>
@@ -100,9 +107,7 @@ s		<!-- Main Content Wrapper -->
 											id="kategori"
 											name="kategori"
 										>
-											<option disabled="" selected="" value="">
-												Pilih Kategori
-											</option>
+											<option selected="" value="<?= $this->session->flashdata('kategori') ?>"><?= $this->session->flashdata('kategori') ?: 'Pilih Kategori' ?></option>
 											<option value="pengumuman">Pengumuman</option>
 											<option value="akademik">Akademik</option>
 											<option value="prestasi">Prestasi</option>
@@ -121,6 +126,7 @@ s		<!-- Main Content Wrapper -->
 												id="tanggal"
 												name="tanggal"
 												type="date"
+												value="<?= $this->session->flashdata('tanggal') ?: date('Y-m-d') ?>"
 											/>
 										</div>
 									</div>
@@ -263,7 +269,7 @@ s		<!-- Main Content Wrapper -->
 									class="w-full min-h-[400px] border-none focus:outline-none p-0 text-body-md leading-relaxed text-on-surface"
 									data-placeholder="Tuliskan berita lengkap di sini..."
 								></div>
-								<textarea id="isiBerita" name="isi_berita" class="hidden"></textarea>
+								<textarea id="isiBerita" name="isi_berita" class="hidden"><?= $this->session->flashdata('isiberita') ?></textarea>
 							</div>
 							<div
 								class="px-8 py-3 bg-surface-container-low text-on-surface-variant flex justify-between items-center"
@@ -302,6 +308,7 @@ s		<!-- Main Content Wrapper -->
 									</div>
 								</label>
 							</div>
+							<input type="hidden" id="existingImage" value="<?= $this->session->flashdata('gambar') ? base_url('assets/img/berita/' . $this->session->flashdata('gambar')) : '' ?>">
 							<div class="bg-surface-container-low rounded-lg p-4 flex items-center gap-4" id="previewContainer">
 								<div class="w-20 h-14 bg-outline-variant rounded overflow-hidden relative">
 									<img id="previewImage" class="w-full h-full object-cover grayscale opacity-50" src="" alt="Pratinjau gambar" />
@@ -416,10 +423,27 @@ s		<!-- Main Content Wrapper -->
 
 			document.addEventListener('DOMContentLoaded', function () {
 				const editor = getEditor();
+				const hidden = document.getElementById('isiBerita');
+				
 				if (editor) {
+					// Load existing content from textarea to editor
+					if (hidden && hidden.value) {
+						editor.innerHTML = hidden.value;
+					}
+					
 					editor.addEventListener('input', syncEditorContent);
 					editor.addEventListener('keyup', syncEditorContent);
 					syncEditorContent();
+				}
+
+				// Load existing image
+				const existingImage = document.getElementById('existingImage').value;
+				if (existingImage) {
+					const preview = document.getElementById('previewImage');
+					const previewText = document.getElementById('previewText');
+					preview.src = existingImage;
+					preview.classList.remove('grayscale', 'opacity-50');
+					previewText.textContent = existingImage.split('/').pop();
 				}
 
 				const imageInput = document.getElementById('gambar');

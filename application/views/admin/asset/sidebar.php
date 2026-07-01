@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="id">
 	<head>
+		<title><?= $title ?? 'Admin Panel' ?></title>
 		<meta charset="utf-8" />
 		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 		<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
