@@ -115,7 +115,8 @@
                             <h2 class="font-headline-lg text-headline-lg text-on-surface mb-md">
                                 Kirim Pesan
                             </h2>
-                            <form class="grid grid-cols-1 md:grid-cols-2 gap-sm" id="contactForm">
+
+                            <form action="<?= site_url('welcome/pesan')?>" method="post" enctype="multipart/form-data" class="grid grid-cols-1 md:grid-cols-2 gap-sm" id="contactForm">
                                 <div class="space-y-base">
                                     <label
                                         class="font-label-md text-label-md text-on-surface-variant"

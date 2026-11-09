@@ -128,6 +128,7 @@
 								</tr>
 							</thead>
 							<tbody class="text-body-md divide-y divide-outline-variant">
+
 								<?php foreach ($berita as $item): ?>
 								<tr
 									class="hover:bg-surface-container-low transition-colors group"
@@ -141,7 +142,7 @@
 													alt="News Image"
 													class="w-full h-full object-cover"
 													data-alt="A clean, professional photograph of a group of secondary school students in formal blue uniforms smiling while working together on a collaborative project in a brightly lit modern classroom. The lighting is soft and natural, emphasizing a positive and focused academic environment. The overall aesthetic is clean and corporate, utilizing a palette of deep blues and bright whites."
-													src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhj9VT8kGPbjPHDYCBGnKEe_7klx3_0qMbRyRwE8fu6aMcGDmS8crpaIlh9gtXTXpq6QAoHev1ugyVSbFyLQHaiKwlta5xLOx1b8-fG6Zkcvsu3mH4qlEoIIyOOB3j94dFOHxqFCcTWZTOpepFWQtPXYfgXTSj7LLogxgHtv1v9TcBcjrHpxBxY3KOA0DOS3UiIT3AkNmyXekIbW4urOT-IvP5WpWE-RMkOnpsqjv1uLEyio32cVDgdjk2wef6lKfmAVUdaAbhiQ"
+													src="<?= base_url('assets/img/berita/' . $item->gambar) ?>"
 												/>
 											</div>
 											<span class="font-medium text-on-surface line-clamp-1"

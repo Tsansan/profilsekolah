@@ -36,6 +36,18 @@ class Welcome extends CI_Controller {
 		$this->load->view('kontak');
 		$this->load->view('asset/footer');
 	}
+
+	public function pesan()
+	{
+		$nama = $this->input->post('nama');
+		$email = $this->input->post('email');
+		$subjek = $this->input->post('subjek');
+		$pesan = $this->input->post('pesan');	
+
+		print_r($_POST);
+		die;
+		redirect('welcome/kontak');
+	}
 	public function berita()
 	{
 		$this->load->view('asset/header');

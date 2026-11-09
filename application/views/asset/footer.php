@@ -131,10 +131,16 @@
                 e.preventDefault();
                 const btn = this.querySelector('button[type="submit"]');
                 const originalContent = btn.innerHTML;
+                console.log("Form submitted");
+                const nama = document.getElementById("nama").value;
+                const email = document.getElementById("email").value;
+                const subjek = document.getElementById("subjek").value;
+                const pesan = document.getElementById("pesan").value;
+                console.log(`Nama: ${nama}, Email: ${email}, Subjek: ${subjek}, Pesan: ${pesan}`);
 
                 btn.innerHTML = "<span>Mengirim...</span>";
                 btn.disabled = true;
-
+                    
                 // Artificial delay to simulate submission
                 setTimeout(() => {
                     btn.innerHTML =

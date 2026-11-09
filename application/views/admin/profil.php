@@ -31,7 +31,8 @@
 					</div>
 				</div>
 				<!-- Editor Form -->
-				<form class="space-y-md">
+				 <?php echo form_open('admin/profil_update', ['class' => 'space-y-md', 'method' => 'post', 'id' => 'profilForm']); ?>
+		
 					<!-- Sejarah Sekolah Section -->
 					<div
 						class="bg-white rounded-xl border border-outline-variant overflow-hidden shadow-sm"
@@ -58,6 +59,7 @@
 									<button
 										class="p-1 hover:bg-surface-variant rounded transition-colors"
 										type="button"
+										onclick="applyFormat('bold', 'sejarahEditor', 'sejarah_sekolah')"
 									>
 										<span class="material-symbols-outlined text-md"
 											>format_bold</span
@@ -66,6 +68,7 @@
 									<button
 										class="p-1 hover:bg-surface-variant rounded transition-colors"
 										type="button"
+										onclick="applyFormat('italic', 'sejarahEditor', 'sejarah_sekolah')"
 									>
 										<span class="material-symbols-outlined text-md"
 											>format_italic</span
@@ -74,9 +77,10 @@
 									<button
 										class="p-1 hover:bg-surface-variant rounded transition-colors"
 										type="button"
+										onclick="applyFormat('underline', 'sejarahEditor', 'sejarah_sekolah')"
 									>
 										<span class="material-symbols-outlined text-md"
-											>format_list_bulleted</span
+											>format_underlined</span
 										>
 									</button>
 									<button
@@ -86,12 +90,18 @@
 										<span class="material-symbols-outlined text-md">link</span>
 									</button>
 								</div>
+								<div
+									id="sejarahEditor"
+									contenteditable="true"
+									class="w-full flex-grow bg-transparent border-none focus:outline-none text-body-md leading-relaxed min-h-[160px]"
+								>
+									SMP Negeri 2 Sidoharjo didirikan pada tahun 1984 dengan komitmen untuk memberikan layanan pendidikan menengah berkualitas di wilayah Sidoharjo. Seiring berjalannya waktu, sekolah ini telah berkembang pesat baik dari segi infrastruktur maupun prestasi akademik...
+								</div>
 								<textarea
-									class="w-full flex-grow bg-transparent border-none focus:ring-0 text-body-md leading-relaxed min-h-[160px]"
-									placeholder="Tuliskan sejarah berdirinya SMP Negeri 2 Sidoharjo di sini..."
-								>
-SMP Negeri 2 Sidoharjo didirikan pada tahun 1984 dengan komitmen untuk memberikan layanan pendidikan menengah berkualitas di wilayah Sidoharjo. Seiring berjalannya waktu, sekolah ini telah berkembang pesat baik dari segi infrastruktur maupun prestasi akademik...</textarea
-								>
+									class="hidden"
+									name="sejarah_sekolah"
+									id="sejarah_sekolah"
+								></textarea>
 							</div>
 						</div>
 					</div>
@@ -121,6 +131,7 @@ SMP Negeri 2 Sidoharjo didirikan pada tahun 1984 dengan komitmen untuk memberika
 									<button
 										class="p-1 hover:bg-surface-variant rounded transition-colors"
 										type="button"
+											onclick="applyFormat('bold', 'taglineEditor', 'tagline_sekolah')"
 									>
 										<span class="material-symbols-outlined text-md"
 											>format_bold</span
@@ -129,6 +140,7 @@ SMP Negeri 2 Sidoharjo didirikan pada tahun 1984 dengan komitmen untuk memberika
 									<button
 										class="p-1 hover:bg-surface-variant rounded transition-colors"
 										type="button"
+											onclick="applyFormat('italic', 'taglineEditor', 'tagline_sekolah')"
 									>
 										<span class="material-symbols-outlined text-md"
 											>format_italic</span
@@ -137,9 +149,10 @@ SMP Negeri 2 Sidoharjo didirikan pada tahun 1984 dengan komitmen untuk memberika
 									<button
 										class="p-1 hover:bg-surface-variant rounded transition-colors"
 										type="button"
+											onclick="applyFormat('underline', 'taglineEditor', 'tagline_sekolah')"
 									>
 										<span class="material-symbols-outlined text-md"
-											>format_list_bulleted</span
+												>format_underlined</span
 										>
 									</button>
 									<button
@@ -149,12 +162,18 @@ SMP Negeri 2 Sidoharjo didirikan pada tahun 1984 dengan komitmen untuk memberika
 										<span class="material-symbols-outlined text-md">link</span>
 									</button>
 								</div>
+								<div
+									id="taglineEditor"
+									contenteditable="true"
+									class="w-full flex-grow bg-transparent border-none focus:outline-none text-body-md leading-relaxed min-h-[160px]"
+								>
+									SMP Negeri 2 Sidoharjo didirikan pada tahun 1984 dengan komitmen untuk memberikan layanan pendidikan menengah berkualitas di wilayah Sidoharjo. Seiring berjalannya waktu, sekolah ini telah berkembang pesat baik dari segi infrastruktur maupun prestasi akademik...
+								</div>
 								<textarea
-									class="w-full flex-grow bg-transparent border-none focus:ring-0 text-body-md leading-relaxed min-h-[160px]"
-									placeholder="Tuliskan sejarah berdirinya SMP Negeri 2 Sidoharjo di sini..."
-								>
-SMP Negeri 2 Sidoharjo didirikan pada tahun 1984 dengan komitmen untuk memberikan layanan pendidikan menengah berkualitas di wilayah Sidoharjo. Seiring berjalannya waktu, sekolah ini telah berkembang pesat baik dari segi infrastruktur maupun prestasi akademik...</textarea
-								>
+									class="hidden"
+									name="tagline_sekolah"
+									id="tagline_sekolah"
+								></textarea>
 							</div>
 						</div>
 					</div>
@@ -180,6 +199,8 @@ SMP Negeri 2 Sidoharjo didirikan pada tahun 1984 dengan komitmen untuk memberika
 								<textarea
 									class="w-full bg-surface-bright border border-outline-variant rounded-lg p-sm focus:border-primary focus:ring-1 focus:ring-primary text-body-md min-h-[120px]"
 									placeholder="Masukkan visi sekolah..."
+									name="visi_sekolah"
+									id="visi_sekolah"
 								>
 								Terwujudnya sekolah yang Unggul dalam Prestasi, Berkarakter Bangsa, dan Berwawasan Lingkungan berdasarkan Iman dan Taqwa.</textarea
 								>
@@ -203,6 +224,8 @@ SMP Negeri 2 Sidoharjo didirikan pada tahun 1984 dengan komitmen untuk memberika
 								<textarea
 									class="w-full bg-surface-bright border border-outline-variant rounded-lg p-sm focus:border-primary focus:ring-1 focus:ring-primary text-body-md min-h-[120px]"
 									placeholder="Masukkan misi sekolah..."
+									name="misi_sekolah"
+									id="misi_sekolah"
 								>
 								1. Melaksanakan pembelajaran dan bimbingan secara efektif.
 								2. Menumbuhkan semangat keunggulan secara intensif kepada seluruh warga sekolah.
@@ -238,8 +261,96 @@ SMP Negeri 2 Sidoharjo didirikan pada tahun 1984 dengan komitmen untuk memberika
 							Simpan Perubahan
 						</button>
 					</div>
-				</form>
+	
+				<?php echo form_close(); ?>
 			</div>
 		</main>
 		<!-- Micro-interaction Scripts -->
+
+		<script>
+			function previewImage(input) {
+				const preview = document.getElementById('previewImage');
+				const previewText = document.getElementById('previewText');
+				if (!input.files || !input.files[0]) {
+					return;
+				}
+
+				const file = input.files[0];
+				if (!file.type.startsWith('image/')) {
+					previewText.textContent = 'File yang dipilih bukan gambar.';
+					preview.src = '';
+					preview.classList.add('grayscale', 'opacity-50');
+					return;
+				}
+
+				preview.src = URL.createObjectURL(file);
+				preview.classList.remove('grayscale', 'opacity-50');
+				previewText.textContent = file.name;
+			}
+
+			function getEditor(editorId) {
+				return document.getElementById(editorId);
+			}
+
+			function applyFormat(command, editorId, hiddenId) {
+				const editor = getEditor(editorId);
+				if (!editor) {
+					return;
+				}
+				editor.focus();
+				document.execCommand(command, false, null);
+				syncEditorContent(editorId, hiddenId);
+			}
+
+			function syncEditorContent(editorId, hiddenId) {
+				const editor = getEditor(editorId);
+				const hidden = document.getElementById(hiddenId);
+				if (!editor || !hidden) {
+					return;
+				}
+				hidden.value = editor.innerHTML;
+			}
+
+			document.addEventListener('DOMContentLoaded', function () {
+				const editors = [
+					{ editorId: 'sejarahEditor', hiddenId: 'sejarah_sekolah' },
+					{ editorId: 'taglineEditor', hiddenId: 'tagline_sekolah' }
+				];
+
+				editors.forEach(function (item) {
+					const editor = getEditor(item.editorId);
+					const hidden = document.getElementById(item.hiddenId);
+
+					if (editor) {
+						if (hidden && hidden.value) {
+							editor.innerHTML = hidden.value;
+						}
+
+						editor.addEventListener('input', function () {
+							syncEditorContent(item.editorId, item.hiddenId);
+						});
+						editor.addEventListener('keyup', function () {
+							syncEditorContent(item.editorId, item.hiddenId);
+						});
+						syncEditorContent(item.editorId, item.hiddenId);
+					}
+				});
+				// Load existing image
+				const existingImage = document.getElementById('existingImage').value;
+				if (existingImage) {
+					const preview = document.getElementById('previewImage');
+					const previewText = document.getElementById('previewText');
+					preview.src = existingImage;
+					preview.classList.remove('grayscale', 'opacity-50');
+					previewText.textContent = existingImage.split('/').pop();
+				}
+
+				const imageInput = document.getElementById('gambar');
+				if (imageInput) {
+					imageInput.addEventListener('change', function () {
+						previewImage(this);
+					});
+				}
+			});
+		</script>
 		

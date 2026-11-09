@@ -230,6 +230,37 @@ class Admin extends CI_Controller {
         $this->load->view('admin/profil');
         $this->load->view('admin/asset/footer');
     }
+
+    Public function profil_update()
+    {
+        print_r($this->input->post());
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('sejarah', 'Sejarah Sekolah', 'required');
+        $this->form_validation->set_rules('visi', 'Visi Sekolah', 'required');
+        $this->form_validation->set_rules('misi', 'Misi Sekolah', 'required');
+
+        if ($this->form_validation->run() === FALSE) {
+            $this->session->set_flashdata('error', validation_errors());
+            redirect('admin/profil');
+            return;
+        }
+
+        $data = array(
+            'sejarah' => $this->input->post('sejarah', FALSE),
+            'visi' => $this->input->post('visi', FALSE),
+            'misi' => $this->input->post('misi', FALSE)
+        );
+
+        if ($this->M_Berita->update_profil($data)) {
+            $this->session->set_flashdata('success', 'Profil berhasil diperbarui.');
+            redirect('admin/profil');
+        } else {
+            $this->session->set_flashdata('error', 'Gagal memperbarui profil.');
+            redirect('admin/profil');
+        }
+    }
+
+
     public function pesan()
     {
         $data['title'] = 'Pesan';
